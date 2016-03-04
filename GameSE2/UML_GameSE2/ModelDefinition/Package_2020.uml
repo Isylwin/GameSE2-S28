@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="0f035444-0009-4179-b26a-c4cfa2aa4c2e"
+  name="Walls" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <packagedElements>
+    <packageHasNamedElement>
+      <class
+        Id="366105ad-e345-48e0-ad18-6c85a6094987"
+        name="Indestructable"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="2aa2c3e4-5bac-4894-a354-025ef8f9f9b0"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="9c271aed-3899-4bfb-85da-a0691cdbd682">
+                <propertyInstance
+                  Id="fc8eff6b-660f-4a36-9293-ea3235aab4f9"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="e960e304-43db-4481-9015-2492b8b4cb72">
+                <propertyInstance
+                  Id="ae463073-0d19-41e5-92ff-66d12902751d"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="86ec814b-fdca-4af1-8899-340270911a76">
+                <propertyInstance
+                  Id="90dc25bc-7e69-4332-950f-a6a05770db96"
+                  name="IsStatic"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="d0ce183e-601c-4026-b30b-ab8ddb066327">
+                <propertyInstance
+                  Id="035b20c6-ebdc-4b78-83c0-f64e4870f5d2"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="c658bda9-9223-45ab-9588-b4fa3d8f96a4">
+                <propertyInstance
+                  Id="e7bd29c6-78c6-408c-8a07-5cdfbaa0d719"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <generalsInternal>
+          <generalization
+            Id="41499262-2182-4c64-8eef-29cbe66047e8"
+            isSubstitutable="false">
+            <classMoniker
+              Id="8ac142db-5f51-481a-be0a-a60468e376be"
+              LastKnownName="Wall"
+              LastKnownLocation="Package_1951.uml" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="c9af76de-aa19-4314-9e32-21081ea8cde9"
+        name="Destructable"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="a3a31f2c-4ac7-4eed-bf08-3cfba7219b40"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="af0bb33b-1870-497f-8546-0e2fc3941da6">
+                <propertyInstance
+                  Id="1c93655a-2100-4677-a825-69e41521710a"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="268b5010-0696-46f4-8b0f-c4f21a559be9">
+                <propertyInstance
+                  Id="69f59b4e-ffcb-41c6-928b-1d7d9c12865c"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="c88f7332-b0e8-4c14-a2b0-32c7238e3015">
+                <propertyInstance
+                  Id="050916f1-f2c4-4352-a501-204284aae8b2"
+                  name="IsStatic"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="4c69d242-d410-4177-9ffb-e2123d4ccdbd">
+                <propertyInstance
+                  Id="81439dac-1e67-4795-9893-3cf4bf132f96"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="e034308f-30cb-4721-b37a-7d039342d710">
+                <propertyInstance
+                  Id="2dc15846-c41d-41ee-aa7e-dde320e17542"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <generalsInternal>
+          <generalization
+            Id="a1772a01-9be4-4b51-98ec-3d4a7d994dc9"
+            isSubstitutable="false">
+            <classMoniker
+              Id="8ac142db-5f51-481a-be0a-a60468e376be"
+              LastKnownName="Wall"
+              LastKnownLocation="Package_1951.uml" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

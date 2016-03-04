@@ -1,0 +1,283 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="37fc9846-b55f-4bab-816a-5f1b19174678"
+  name="PowerUp" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <appliedStereotypesInternal>
+    <stereotypeInstance
+      Id="2d0cd1b4-ed7f-4ab7-a164-13f6d6b40b76"
+      name="namespace"
+      profile="CSharpProfile">
+      <propertyInstances>
+        <stereotypeInstanceHasPropertyInstances
+          Id="04c38cbc-9f2e-4b9d-80f0-598914750790">
+          <propertyInstance
+            Id="af3d7188-e780-4c44-a31d-e2f20664e413"
+            name="BaseName" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances
+          Id="b40227fb-1b4a-4b59-a27f-4bf7447c46b1">
+          <propertyInstance
+            Id="7fe22e83-07a1-40b8-893e-0ac55a227f55"
+            name="ClrAttributes" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances
+          Id="bae6820a-0d0d-4755-8825-e74ae2c7a02f">
+          <propertyInstance
+            Id="197d5fe1-35d1-4e9e-8533-dd7d0598947e"
+            name="Usings" />
+        </stereotypeInstanceHasPropertyInstances>
+      </propertyInstances>
+    </stereotypeInstance>
+  </appliedStereotypesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <class
+        Id="366c08db-3b32-402d-80a1-e0e729d7610e"
+        name="Yellow"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="51b0d0a9-da1b-43b6-96ee-ad0cf86bf031"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="45a04ba2-5cd1-4dc6-8028-853a0b27ff7a">
+                <propertyInstance
+                  Id="8273c64a-ed87-4f0e-8122-02dd54b1102b"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="a582ad38-c567-445f-8f18-6679ea500ac3">
+                <propertyInstance
+                  Id="7d892b3f-ddd2-4b2c-9cf7-58b9c7b998d3"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="e2ab9552-beb1-44a1-b9a4-7ca0666d226d">
+                <propertyInstance
+                  Id="5fe85bf0-b463-4233-8b04-2cb79f5fafb3"
+                  name="IsStatic"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="ad3858a3-cf5c-45b6-955e-f025e841bd6f">
+                <propertyInstance
+                  Id="7f6abdd1-aa61-4ba5-ac7c-d6d029e5e1bd"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="c5f52df3-998a-485d-ae2a-aaf6ebc51757">
+                <propertyInstance
+                  Id="f7943c46-fad0-40f5-b900-f1ff74175a85"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <generalsInternal>
+          <generalization
+            Id="b3f41e33-0c71-48fa-819f-e0ebf2a5cf32"
+            isSubstitutable="false">
+            <classMoniker
+              Id="f90a84bc-692c-45b7-b10f-f3dbfb62db20"
+              LastKnownName="PowerUp"
+              LastKnownLocation="UML_GameSE2.uml" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="c1d1dfd7-fb7c-4c20-acdd-bbd3d219bc4e"
+        name="Blue"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="ca740f7d-e357-4748-93fa-3658b2ccca5a"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="4987c166-f5ae-4d04-8809-5908cd5b65a2">
+                <propertyInstance
+                  Id="9b8083d5-b5dc-49f6-b563-ca081df7f73e"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="98b46a40-58c8-4e89-a301-2d60aa51987f">
+                <propertyInstance
+                  Id="5b726c8b-a2ff-4799-910e-6bbbd4fbe099"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="4ac7ff2e-cf23-4a64-85b0-8ed763511b1e">
+                <propertyInstance
+                  Id="481b5267-2f73-49df-a651-7d6ab3c87911"
+                  name="IsStatic"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="c8c32683-79ad-4ec7-9347-58675a06f31e">
+                <propertyInstance
+                  Id="7e37bb3d-3d6d-4a71-a018-a8c68d066949"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="0589a5cd-6505-4b37-8ce9-8285af29e3d7">
+                <propertyInstance
+                  Id="46b8d610-2d37-43a8-b14c-51da0d9ff19f"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <generalsInternal>
+          <generalization
+            Id="1ea49691-d8ac-45d4-b1b3-c3a03ceca502"
+            isSubstitutable="false">
+            <classMoniker
+              Id="f90a84bc-692c-45b7-b10f-f3dbfb62db20"
+              LastKnownName="PowerUp"
+              LastKnownLocation="UML_GameSE2.uml" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="ef793b80-98f0-496e-9124-c3d060f91062"
+        name="Green"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="e3bed5f2-7a39-4252-b1c4-4a52f04a13a8"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="5724d110-c1e1-4fdb-8b93-fc3fa9cd5245">
+                <propertyInstance
+                  Id="a55e0404-89de-44d8-af5c-2eadac19690e"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="6987b4d2-62a9-44a6-bf0e-c654deb1daac">
+                <propertyInstance
+                  Id="70803309-223b-4a93-b71a-34fabf1c8131"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="60516f27-e025-4697-ba3d-824324df8202">
+                <propertyInstance
+                  Id="d11aa01d-eccd-4463-87a6-3f54e76acb20"
+                  name="IsStatic"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="1f703eab-242c-4727-adbe-f697dd02eb09">
+                <propertyInstance
+                  Id="442c696e-03ae-43c9-9f5b-7276adfbd178"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="a7ccd593-a77a-403c-b2dc-39a76773e048">
+                <propertyInstance
+                  Id="0b90cdea-e702-4a4e-ba6f-09d0c08f7608"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <generalsInternal>
+          <generalization
+            Id="b4b1eae2-2c23-4542-a658-fd0223baaae7"
+            isSubstitutable="false">
+            <classMoniker
+              Id="f90a84bc-692c-45b7-b10f-f3dbfb62db20"
+              LastKnownName="PowerUp"
+              LastKnownLocation="UML_GameSE2.uml" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="575b779c-3f2e-4778-b500-5df6348b818e"
+        name="Red"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="9962d1ab-1022-493d-a6a4-5b7c93086de9"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="1952e7c8-0fe6-4232-9d54-898e5ade7bc6">
+                <propertyInstance
+                  Id="06a6122f-302a-46c5-a7e7-5710abf1fc9c"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="e2ee5285-43f5-461c-a1ed-f0f6d07015f5">
+                <propertyInstance
+                  Id="bcac8f17-bef0-45e4-97d6-7725600cba93"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="f26ed4d0-d483-4f22-93df-d3d294524079">
+                <propertyInstance
+                  Id="fbdbb451-c001-4f5f-b613-ebc118786894"
+                  name="IsStatic"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="2dedb4fd-9161-48bc-8c7a-d1754304c22f">
+                <propertyInstance
+                  Id="9ee6c567-0f53-4308-88a7-1b38f8a2f9d3"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="c4dbf3f9-7c9d-48d5-9c14-c3968e98c1ae">
+                <propertyInstance
+                  Id="7eb34398-bd77-4948-8503-945225f71412"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <generalsInternal>
+          <generalization
+            Id="da0dbad3-1919-4968-8dab-2a6570569951"
+            isSubstitutable="false">
+            <classMoniker
+              Id="f90a84bc-692c-45b7-b10f-f3dbfb62db20"
+              LastKnownName="PowerUp"
+              LastKnownLocation="UML_GameSE2.uml" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

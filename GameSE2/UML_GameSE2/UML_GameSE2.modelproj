@@ -23,12 +23,37 @@
   <Import Project="$(VSToolsPath)\ArchitectureTools\Microsoft.VisualStudio.TeamArchitect.ModelingProject.targets" Condition="'$(VSToolsPath)' != ''" />
   <ItemGroup>
     <Folder Include="ModelDefinition\" />
-    <Content Include="ClassDiagram.classdiagram">
+    <Content Include="Entity.classdiagram">
       <SubType>Content</SubType>
     </Content>
-    <Content Include="ClassDiagram.classdiagram.layout">
+    <Content Include="Entity.classdiagram.layout">
       <SubType>Content</SubType>
-      <DependentUpon>ClassDiagram.classdiagram</DependentUpon>
+      <DependentUpon>Entity.classdiagram</DependentUpon>
+    </Content>
+    <Content Include="MainDiagram.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="MainDiagram.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>MainDiagram.classdiagram</DependentUpon>
+    </Content>
+    <Content Include="ModelDefinition\Package_1946.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package_1951.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package_1953.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package_2019.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package_2020.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package_2022.uml">
+      <SubType>Content</SubType>
     </Content>
     <Content Include="ModelDefinition\UML_GameSE2.uml">
       <SubType>Content</SubType>
