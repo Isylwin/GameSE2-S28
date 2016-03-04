@@ -1,0 +1,18 @@
+﻿Must:
+
+
+
+Should:
+
+Could:
+
+Would:
+
+
+
+Ideas:
+Player and npc's can shoot arrows.
+Players and npc can melee.
+Map is randomly generated.
+Goal is to kill all enemies? Goal is to reach the center? Goal is to reach the other side?
+
