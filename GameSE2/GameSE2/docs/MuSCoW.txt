@@ -14,5 +14,7 @@ Ideas:
 Player and npc's can shoot arrows.
 Players and npc can melee.
 Map is randomly generated.
-Goal is to kill all enemies? Goal is to reach the center? Goal is to reach the other side?
+Goal is to kill all enemies.
+Get a score as high as possible? 
+Amount of enemies gets larger and larger.
 
