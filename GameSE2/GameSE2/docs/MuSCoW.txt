@@ -17,4 +17,7 @@ Map is randomly generated.
 Goal is to kill all enemies.
 Get a score as high as possible? 
 Amount of enemies gets larger and larger.
-
+Drawing is done on a background worker? Synced up with a game tick and hopefully.
+For fullscreen code check CardCzar.
+Make world 200x200 but only show a portion of it.
+Maybe 50x50 with 20px20px squares.
