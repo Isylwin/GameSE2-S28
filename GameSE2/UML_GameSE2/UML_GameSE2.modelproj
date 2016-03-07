@@ -23,6 +23,13 @@
   <Import Project="$(VSToolsPath)\ArchitectureTools\Microsoft.VisualStudio.TeamArchitect.ModelingProject.targets" Condition="'$(VSToolsPath)' != ''" />
   <ItemGroup>
     <Folder Include="ModelDefinition\" />
+    <Content Include="GameUpdate.activitydiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="GameUpdate.activitydiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>GameUpdate.activitydiagram</DependentUpon>
+    </Content>
     <Content Include="Entity.classdiagram">
       <SubType>Content</SubType>
     </Content>

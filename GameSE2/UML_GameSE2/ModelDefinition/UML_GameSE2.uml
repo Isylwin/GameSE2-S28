@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm11="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner"
   dslVersion="1.0.0.0"
   Id="bf6011fe-c933-498a-98a5-a770195ae547"
   name="UML_GameSE2" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
@@ -7,6 +7,26 @@
     <comment
       Id="f72fc886-2227-4109-a263-fee2526c8f8f">
       <body>See entity diagram for childs</body>
+    </comment>
+    <comment
+      Id="bd240eb0-1df7-4408-a331-c12917dff002">
+      <body>Multithread this if it is too expensive.</body>
+      <annotatedElements>
+        <opaqueActionMoniker
+          Id="e992c2a4-8ac2-4a42-8886-47499da86299"
+          LastKnownName="CalculateEnemyMoves"
+          LastKnownLocation="UML_GameSE2.uml" />
+      </annotatedElements>
+    </comment>
+    <comment
+      Id="11896579-070b-439d-9bfb-a289aa587fd6">
+      <body>Arrows move twice as fast as other entities. Update them twice as often.</body>
+      <annotatedElements>
+        <decisionNodeMoniker
+          Id="10d816be-1912-4a72-814d-3a9ae26f8507"
+          LastKnownName="Timer"
+          LastKnownLocation="UML_GameSE2.uml" />
+      </annotatedElements>
     </comment>
   </ownedCommentsInternal>
   <appliedStereotypesInternal>
@@ -212,12 +232,12 @@
             Id="a3c0c540-aa00-43bc-8c44-c7ad00914014"
             isDerived="false"
             sourceEndRoleName="World"
-            targetEndRoleName="Options"
+            targetEndRoleName="Settings"
             isLeaf="false"
             isAbstract="false">
             <classMoniker
               Id="f6046e6b-d6a3-4e99-ac3f-d7111109d8ab"
-              LastKnownName="Options"
+              LastKnownName="Settings"
               LastKnownLocation="UML_GameSE2.uml" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
@@ -236,7 +256,7 @@
               <associationHasOwnedEnds>
                 <memberEnd
                   Id="4fcbe2bc-eeac-4e74-9ea4-6d317924d0e4"
-                  name="Options"
+                  name="Settings"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
@@ -248,20 +268,20 @@
             </relationshipOwnedElementsInternal>
           </association>
           <association
-            Id="d647f67f-ff40-4886-b7d0-52d416b882d6"
+            Id="54fe00ff-9063-4cd5-b857-107b0ad69e9d"
             isDerived="false"
             sourceEndRoleName="World"
-            targetEndRoleName="Cell"
+            targetEndRoleName="Map"
             isLeaf="false"
             isAbstract="false">
             <classMoniker
-              Id="331912cc-5137-43cf-ab4d-9fc5a4607244"
-              LastKnownName="Cell"
+              Id="d30d26b4-3d20-4c58-9a15-2431c91c060c"
+              LastKnownName="Map"
               LastKnownLocation="Package_1953.uml" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
                 <memberEnd
-                  Id="7c9c62ef-6252-43cd-a8d3-1d7d960ca8a9"
+                  Id="14a5f35b-6870-4374-b37d-bb7e9bf73ae7"
                   name="World"
                   isLeaf="false"
                   isStatic="false"
@@ -274,28 +294,54 @@
               </associationHasOwnedEnds>
               <associationHasOwnedEnds>
                 <memberEnd
-                  Id="f60e093f-cfee-4986-b99f-9a17d24b4dc3"
-                  name="Cell"
+                  Id="827b8c14-a9a5-4678-b803-7f4abe1a7519"
+                  name="Map"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
                   isDerived="false"
                   isDerivedUnion="false"
                   aggregation="None"
-                  isComposite="false">
-                  <lowerValueInternal>
-                    <literalString
-                      Id="58b99de7-9eba-4e96-b711-74f46608d8ad"
-                      name="Lower"
-                      value="1" />
-                  </lowerValueInternal>
-                  <upperValueInternal>
-                    <literalString
-                      Id="81c72de9-a6fe-414a-a203-732456cbee47"
-                      name="Upper"
-                      value="*" />
-                  </upperValueInternal>
-                </memberEnd>
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="bb86560e-1cbc-4770-9bfe-1a3fcacd8a58"
+            isDerived="false"
+            sourceEndRoleName="World"
+            targetEndRoleName="Level"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="4e8799aa-3cb5-4ad7-a397-b89ebdc52888"
+              LastKnownName="Level"
+              LastKnownLocation="UML_GameSE2.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="342dd412-418b-4755-a789-e99f6826f138"
+                  name="World"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="e3d6db64-dd07-4b25-b99b-a8990d6df157"
+                  name="Level"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
           </association>
@@ -394,13 +440,52 @@
                 LastKnownLocation="Package_1951.uml" />
             </type_NamedElement>
           </property>
+          <property
+            Id="52a07520-df63-434c-9363-eba56e14f541"
+            name="Score"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="220a3521-e091-4221-bae9-3ef9018e845c"
+                LastKnownName="Integer"
+                LastKnownLocation="UML_GameSE2.uml" />
+            </type_NamedElement>
+          </property>
         </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="e04e2a90-3fad-46be-b20d-9312725e0c7d"
+            name="Update"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <description>Needs the keys from the form that are currently active.</description>
+          </operation>
+          <operation
+            Id="996f94dd-a929-49ed-8e7f-ab186b1b3972"
+            name="MovePlayer"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
     <packageHasNamedElement>
       <class
         Id="f6046e6b-d6a3-4e99-ac3f-d7111109d8ab"
-        name="Options"
+        name="Settings"
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false">
@@ -538,7 +623,35 @@
                 LastKnownLocation="UML_GameSE2.uml" />
             </type_NamedElement>
           </property>
+          <property
+            Id="34d0c4f7-e58c-4dd6-aba3-8ef6ccd9154e"
+            name="Seed"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="220a3521-e091-4221-bae9-3ef9018e845c"
+                LastKnownName="Integer"
+                LastKnownLocation="UML_GameSE2.uml" />
+            </type_NamedElement>
+          </property>
         </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="bcb6ed0e-efd9-4a22-84eb-176be8ff94bd"
+            name="Settings"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
     <packageHasNamedElement>
@@ -712,6 +825,257 @@
           </stereotypeInstance>
         </appliedStereotypesInternal>
       </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="4e8799aa-3cb5-4ad7-a397-b89ebdc52888"
+        name="Level"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <ownedAttributesInternal>
+          <property
+            Id="691def13-42f8-4e58-a072-1e5077a5ffb1"
+            name="LevelNumber"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="220a3521-e091-4221-bae9-3ef9018e845c"
+                LastKnownName="Integer"
+                LastKnownLocation="UML_GameSE2.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="b7a1d77b-4191-4a9f-9fe2-bc6c9d731461"
+            name="Enemies"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="54a69814-470d-422b-85e6-cbc47fe92589"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="95efa385-c830-40a5-b3f3-b5bba7a3bbfc">
+                    <propertyInstance
+                      Id="2f45e03a-3a32-41be-aa28-dc1609764329"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="bd9b49e1-49ae-40ca-a08c-cd526cea2abf">
+                    <propertyInstance
+                      Id="1391b44c-91bf-4621-973b-11e9ec9c9595"
+                      name="Get"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="13dc9b37-6617-425c-bba1-f2f72fd2ff75">
+                    <propertyInstance
+                      Id="45697381-b64c-4d47-a2d0-3cf48bcbbfbf"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="758388f4-e27c-45fa-b987-9eaacd238b8e">
+                    <propertyInstance
+                      Id="36c72c55-8a43-43eb-a7a0-7055fe3586b2"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="99dac894-4c6b-4e75-813e-38d070673200">
+                    <propertyInstance
+                      Id="ef2e4833-8b4e-4cbe-9402-a327730cebc6"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="40611718-cba1-4d1d-a200-e889b5a814d2">
+                    <propertyInstance
+                      Id="28c8fdde-10af-46c0-9a32-e9662d38254a"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="2caef75e-f51a-4d67-99d1-7d524d00b6d9">
+                    <propertyInstance
+                      Id="dda99aad-1d35-4c47-a3b3-6e9ba6ff409d"
+                      name="Set"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <lowerValueInternal>
+              <literalString
+                Id="a61e2b61-0d78-4b64-9334-ea20cf9a0cb2"
+                name="Lower"
+                value="*" />
+            </lowerValueInternal>
+            <upperValueInternal>
+              <literalString
+                Id="00ded05d-ff2e-43f1-bf1b-1e01bac2801e"
+                name="Upper"
+                value="*" />
+            </upperValueInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="d7ce5b25-bd56-4f0a-93f0-5b414d94096e"
+                LastKnownName="Enemy"
+                LastKnownLocation="Package_1951.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <activity
+        Id="189cafd1-1829-4bcd-a57b-6eb8a91e2c15"
+        name="ActivityDiagram"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false"
+        isReentrant="false"
+        isReadOnly="false"
+        isSingleExecution="false">
+        <nodes>
+          <initialNode
+            Id="7bec9397-1bb1-4f50-aa18-82bddbb268bd"
+            name="GameUpdate"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="94584c5e-2917-4a1d-b2f0-b59a7c5d35da"
+                isLeaf="false">
+                <decisionNodeMoniker
+                  Id="10d816be-1912-4a72-814d-3a9ae26f8507"
+                  LastKnownName="Timer"
+                  LastKnownLocation="UML_GameSE2.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
+          <opaqueAction
+            Id="7d5efb36-8db5-4881-a1e6-f64be4f82477"
+            name="MoveArrows"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="0467e152-82af-40cd-990b-32f4d4775261"
+                isLeaf="false">
+                <activityFinalNodeMoniker
+                  Id="8d03e2d9-c2dc-4d7b-a9b9-5b3a8ebfe6a0"
+                  LastKnownName="ActivityFinal1"
+                  LastKnownLocation="UML_GameSE2.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="541cb5c9-d660-4c17-adbb-7e837aa110ce"
+            name="MovePlayer"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="ae0082f7-8212-4662-8c18-990807917acb"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="e992c2a4-8ac2-4a42-8886-47499da86299"
+                  LastKnownName="CalculateEnemyMoves"
+                  LastKnownLocation="UML_GameSE2.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="e992c2a4-8ac2-4a42-8886-47499da86299"
+            name="CalculateEnemyMoves"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="427b7d5e-5c2d-45a2-9e66-de0717a06b61"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="b3575c61-6203-403c-9a96-2a3df3b78189"
+                  LastKnownName="MoveEnemies"
+                  LastKnownLocation="UML_GameSE2.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="b0d3bf50-7fa3-4b4c-aff2-dce881a4e6ba"
+            name="MoveArrows"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="fc28df22-0d28-4af6-818d-d5b8970640db"
+                isLeaf="false">
+                <activityFinalNodeMoniker
+                  Id="d3661e75-e1f7-4a8d-a289-561a9b113f9a"
+                  LastKnownName="ActivityFinal11"
+                  LastKnownLocation="UML_GameSE2.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode
+            Id="10d816be-1912-4a72-814d-3a9ae26f8507"
+            name="Timer"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="68b0d6ec-5756-4f2e-b1cb-b1baf36eb3ac"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="7d5efb36-8db5-4881-a1e6-f64be4f82477"
+                  LastKnownName="MoveArrows"
+                  LastKnownLocation="UML_GameSE2.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="cc16a127-7bad-46e9-818b-e86adea0df18"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="541cb5c9-d660-4c17-adbb-7e837aa110ce"
+                  LastKnownName="MovePlayer"
+                  LastKnownLocation="UML_GameSE2.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction
+            Id="b3575c61-6203-403c-9a96-2a3df3b78189"
+            name="MoveEnemies"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="3f26e715-ea0d-498f-9846-1a00af7e0590"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="b0d3bf50-7fa3-4b4c-aff2-dce881a4e6ba"
+                  LastKnownName="MoveArrows"
+                  LastKnownLocation="UML_GameSE2.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <activityFinalNode
+            Id="8d03e2d9-c2dc-4d7b-a9b9-5b3a8ebfe6a0"
+            name="ActivityFinal1"
+            isLeaf="false" />
+          <activityFinalNode
+            Id="d3661e75-e1f7-4a8d-a289-561a9b113f9a"
+            name="ActivityFinal11"
+            isLeaf="false" />
+        </nodes>
+      </activity>
     </packageHasNamedElement>
   </packagedElements>
   <primitiveType
