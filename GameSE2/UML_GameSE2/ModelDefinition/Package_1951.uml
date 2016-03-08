@@ -1,14 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
   dslVersion="1.0.0.0"
   Id="e3240e83-645f-43d0-a676-1de8a2d6bd6a"
   name="Entities" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
-  <ownedCommentsInternal>
-    <comment
-      Id="196c2760-c8c9-4ba8-b981-d6fc045eff38">
-      <body>Needed because a cell needs to have an entity</body>
-    </comment>
-  </ownedCommentsInternal>
   <appliedStereotypesInternal>
     <stereotypeInstance
       Id="facd7ad8-6d97-4704-bcb3-a34969ea9d2b"
@@ -103,7 +97,7 @@
       <class
         Id="d7ce5b25-bd56-4f0a-93f0-5b414d94096e"
         name="Enemy"
-        isAbstract="false"
+        isAbstract="true"
         isLeaf="false"
         isActiveClass="false">
         <appliedStereotypesInternal>
@@ -159,6 +153,26 @@
               LastKnownLocation="UML_GameSE2.uml" />
           </generalization>
         </generalsInternal>
+        <ownedAttributesInternal>
+          <property
+            Id="501a26c8-0f14-48c6-9df4-04db2cb57a76"
+            name="CanShoot"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+                LastKnownName="Boolean"
+                LastKnownLocation="UML_GameSE2.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
       </class>
     </packageHasNamedElement>
     <packageHasNamedElement>
@@ -278,141 +292,10 @@
       </class>
     </packageHasNamedElement>
     <packageHasNamedElement>
-      <class
-        Id="8ac142db-5f51-481a-be0a-a60468e376be"
-        name="Wall"
-        isAbstract="true"
-        isLeaf="false"
-        isActiveClass="false">
-        <appliedStereotypesInternal>
-          <stereotypeInstance
-            Id="112da3d4-d2fb-4922-8350-2c9a81a04db3"
-            name="class"
-            profile="CSharpProfile">
-            <propertyInstances>
-              <stereotypeInstanceHasPropertyInstances
-                Id="0e2cbd0f-62c8-4470-b8e7-f619fcc1d922">
-                <propertyInstance
-                  Id="4b70cee0-b785-45e7-9f62-a0e30bb31464"
-                  name="ClrAttributes" />
-              </stereotypeInstanceHasPropertyInstances>
-              <stereotypeInstanceHasPropertyInstances
-                Id="dcd5c166-8e4c-4841-88c3-2de7d72869ae">
-                <propertyInstance
-                  Id="2fb37f5d-3aea-4412-843c-f39f9462f65c"
-                  name="IsPartial"
-                  value="false" />
-              </stereotypeInstanceHasPropertyInstances>
-              <stereotypeInstanceHasPropertyInstances
-                Id="90c81d9d-4182-45d5-a203-f3949d518b67">
-                <propertyInstance
-                  Id="dd9e8bcd-895c-4f3b-966c-387dd2422f78"
-                  name="IsStatic"
-                  value="false" />
-              </stereotypeInstanceHasPropertyInstances>
-              <stereotypeInstanceHasPropertyInstances
-                Id="f660f2a9-7e28-4a07-9e54-5f7973a507c2">
-                <propertyInstance
-                  Id="69ca8cfb-1d61-463a-9677-6821b63e7255"
-                  name="IsUnsafe"
-                  value="false" />
-              </stereotypeInstanceHasPropertyInstances>
-              <stereotypeInstanceHasPropertyInstances
-                Id="ce46ca64-f3b2-4b23-8a82-83aa2c9d9234">
-                <propertyInstance
-                  Id="fdd5bc76-df92-4504-85ac-bbdac1f76be1"
-                  name="PackageVisibility"
-                  value="internal" />
-              </stereotypeInstanceHasPropertyInstances>
-            </propertyInstances>
-          </stereotypeInstance>
-        </appliedStereotypesInternal>
-        <generalsInternal>
-          <generalization
-            Id="a91edd51-2725-4753-990b-dc23e03d5f24"
-            isSubstitutable="false">
-            <classMoniker
-              Id="7794c0ce-f281-41e9-bf0d-12c365dcb8dd"
-              LastKnownName="Entity"
-              LastKnownLocation="UML_GameSE2.uml" />
-          </generalization>
-        </generalsInternal>
-      </class>
-    </packageHasNamedElement>
-    <packageHasNamedElement>
-      <class
-        Id="0717e12a-8382-4070-9e56-61fac244cdbd"
-        name="Empty"
-        isAbstract="false"
-        isLeaf="false"
-        isActiveClass="false">
-        <description>Empty space</description>
-        <appliedStereotypesInternal>
-          <stereotypeInstance
-            Id="e649be6c-3e2d-4092-9744-16b7fb8dbe7e"
-            name="class"
-            profile="CSharpProfile">
-            <propertyInstances>
-              <stereotypeInstanceHasPropertyInstances
-                Id="b88ceade-008a-4b28-8295-d424621513cd">
-                <propertyInstance
-                  Id="807203d1-890e-476b-8296-51983f0db83f"
-                  name="ClrAttributes" />
-              </stereotypeInstanceHasPropertyInstances>
-              <stereotypeInstanceHasPropertyInstances
-                Id="28077c65-3dc9-4348-a0fa-6eb16f680fc8">
-                <propertyInstance
-                  Id="3019bb5d-fe74-49a6-a311-0d1d66f41a45"
-                  name="IsPartial"
-                  value="false" />
-              </stereotypeInstanceHasPropertyInstances>
-              <stereotypeInstanceHasPropertyInstances
-                Id="007416fb-5ea9-4c97-82ad-e4bba3f17299">
-                <propertyInstance
-                  Id="2a13c632-0ce9-48eb-9fad-bcacf5ee1ef9"
-                  name="IsStatic"
-                  value="false" />
-              </stereotypeInstanceHasPropertyInstances>
-              <stereotypeInstanceHasPropertyInstances
-                Id="48783e04-2dba-47e9-b088-53ea2d65eb9f">
-                <propertyInstance
-                  Id="bf51871e-0112-49ca-b26a-f632bf28463c"
-                  name="IsUnsafe"
-                  value="false" />
-              </stereotypeInstanceHasPropertyInstances>
-              <stereotypeInstanceHasPropertyInstances
-                Id="7a07f054-8601-4805-b2e9-22fa46a26ed1">
-                <propertyInstance
-                  Id="8b00c32e-7af3-45ae-b61c-3799cabeb21c"
-                  name="PackageVisibility"
-                  value="internal" />
-              </stereotypeInstanceHasPropertyInstances>
-            </propertyInstances>
-          </stereotypeInstance>
-        </appliedStereotypesInternal>
-        <generalsInternal>
-          <generalization
-            Id="c6269824-2eb8-4c70-a76f-3b6a7f3e9f53"
-            isSubstitutable="false">
-            <classMoniker
-              Id="7794c0ce-f281-41e9-bf0d-12c365dcb8dd"
-              LastKnownName="Entity"
-              LastKnownLocation="UML_GameSE2.uml" />
-          </generalization>
-        </generalsInternal>
-      </class>
-    </packageHasNamedElement>
-    <packageHasNamedElement>
       <packageMoniker
         Id="d1a2f473-ea0f-4b13-9f51-7d09714ef10f"
         LastKnownName="Arrows"
         LastKnownLocation="Package_2019.uml" />
-    </packageHasNamedElement>
-    <packageHasNamedElement>
-      <packageMoniker
-        Id="0f035444-0009-4179-b26a-c4cfa2aa4c2e"
-        LastKnownName="Walls"
-        LastKnownLocation="Package_2020.uml" />
     </packageHasNamedElement>
     <packageHasNamedElement>
       <packageMoniker

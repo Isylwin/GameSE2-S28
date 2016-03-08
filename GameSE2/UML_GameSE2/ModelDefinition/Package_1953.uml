@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm11="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner"
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
   dslVersion="1.0.0.0"
   Id="7e9033df-f6d1-46fd-bd6e-8fd1f82d0806"
   name="Map" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
@@ -314,98 +314,27 @@
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
           </association>
-          <association
-            Id="1ac692ea-1204-485f-a25a-15608b5d1c25"
-            isDerived="false"
-            sourceEndRoleName="Cell"
-            targetEndRoleName="Entity"
-            isLeaf="false"
-            isAbstract="false">
-            <classMoniker
-              Id="7794c0ce-f281-41e9-bf0d-12c365dcb8dd"
-              LastKnownName="Entity"
-              LastKnownLocation="UML_GameSE2.uml" />
-            <relationshipOwnedElementsInternal>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="89ac757f-b8c5-4bfc-805e-88717723e39f"
-                  name="Cell"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="None"
-                  isComposite="false"
-                  isNavigableOwned="false" />
-              </associationHasOwnedEnds>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="7daf8303-0343-4817-8246-99efe2559e53"
-                  name="Entity"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="None"
-                  isComposite="false" />
-              </associationHasOwnedEnds>
-            </relationshipOwnedElementsInternal>
-          </association>
-          <association
-            Id="d8a1a7e2-d652-402a-8688-683701921c68"
-            isDerived="false"
-            sourceEndRoleName="Cell"
-            targetEndRoleName="PowerUp"
-            isLeaf="false"
-            isAbstract="false">
-            <classMoniker
-              Id="f90a84bc-692c-45b7-b10f-f3dbfb62db20"
-              LastKnownName="PowerUp"
-              LastKnownLocation="UML_GameSE2.uml" />
-            <relationshipOwnedElementsInternal>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="f31c6a58-cab9-4131-9743-7b06940899dc"
-                  name="Cell"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="None"
-                  isComposite="false"
-                  isNavigableOwned="false" />
-              </associationHasOwnedEnds>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="910e6710-eae6-4b07-af91-f26400febb68"
-                  name="PowerUp"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="None"
-                  isComposite="false">
-                  <lowerValueInternal>
-                    <literalString
-                      Id="2cbd04d3-ab5c-42ec-a804-91fbe79ac753"
-                      name="Lower"
-                      value="0" />
-                  </lowerValueInternal>
-                  <upperValueInternal>
-                    <literalString
-                      Id="25a5e9a1-c2aa-4305-b3c6-0b4258928bc7"
-                      name="Upper"
-                      value="1" />
-                  </upperValueInternal>
-                </memberEnd>
-              </associationHasOwnedEnds>
-            </relationshipOwnedElementsInternal>
-          </association>
         </targetEnds>
+        <ownedAttributesInternal>
+          <property
+            Id="8b31227b-8897-431f-82fb-07f4108498bc"
+            name="IsWall"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+                LastKnownName="Boolean"
+                LastKnownLocation="UML_GameSE2.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
       </class>
     </packageHasNamedElement>
     <packageHasNamedElement>
@@ -473,6 +402,7 @@
           <property
             Id="ff474b9e-3931-44cc-be3a-83a0aeb8e51b"
             name="Height"
+            visibility="Private"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -491,6 +421,26 @@
           <property
             Id="66026a03-3063-4324-be7d-8343e916bc6a"
             name="Width"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="220a3521-e091-4221-bae9-3ef9018e845c"
+                LastKnownName="Integer"
+                LastKnownLocation="UML_GameSE2.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="1c145d2a-e15a-42b5-9499-629b814ba926"
+            name="CellSize"
+            visibility="Private"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -528,6 +478,55 @@
                       Id="f6046e6b-d6a3-4e99-ac3f-d7111109d8ab"
                       LastKnownName="Settings"
                       LastKnownLocation="UML_GameSE2.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="edca6bae-df3d-4f5f-973f-64b6653c70ad"
+            name="CalculatePath"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="767d8133-fdee-4282-93b7-502377b41e2b"
+                  direction="Return">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="71840806-2fe5-4920-a279-40bc436bac3e"
+                      LastKnownName="Path"
+                      LastKnownLocation="Package_1953.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="7876a902-3551-4ceb-90dd-961779551671"
+                  name="startLoc"
+                  direction="In">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="bc3dc095-abf9-4c7a-a4f5-e619c9355539"
+                      LastKnownName="Location"
+                      LastKnownLocation="Package_1953.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="0ca54b81-868c-45b0-99a1-97f6b69d4691"
+                  name="EndLoc"
+                  direction="In">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="bc3dc095-abf9-4c7a-a4f5-e619c9355539"
+                      LastKnownName="Location"
+                      LastKnownLocation="Package_1953.uml" />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
@@ -678,8 +677,8 @@
     </packageHasNamedElement>
     <packageHasNamedElement>
       <undefinedType
-        Id="b4143360-6e5f-42f1-ad62-c86e23e4e0fa"
-        name="set" />
+        Id="2dbcfbcc-b1ac-4dbb-a95c-0215a7f5516f"
+        name="l" />
     </packageHasNamedElement>
   </packagedElements>
 </package>
