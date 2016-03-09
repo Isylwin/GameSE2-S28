@@ -1,0 +1,202 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<activityRootModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" dslVersion="1.0.0.0" Id="cb0bf043-234d-4078-8384-d2e081125e6a" name="ActivityDiagram" linkedPackageId="027944f1-f845-4eb4-804b-68f16d7344fc" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner">
+  <ownedCommentsInternal>
+    <comment Id="5279e85a-2fd3-4e34-9bbf-625978c0ef3d">
+      <elementDefinition Id="bd240eb0-1df7-4408-a331-c12917dff002" />
+      <body>Multithread this if it is too expensive.</body>
+      <annotatedElements>
+        <opaqueActionMoniker Id="ffb31283-cea8-486f-a155-0c6c11bd4f33" LastKnownName="CalculateEnemyMoves" />
+      </annotatedElements>
+    </comment>
+    <comment Id="8e685c5a-34f2-4a37-a242-7ed4cfe82183">
+      <elementDefinition Id="11896579-070b-439d-9bfb-a289aa587fd6" />
+      <body>Arrows move twice as fast as other entities. Update them twice as often.</body>
+      <annotatedElements>
+        <decisionNodeMoniker Id="c75865b7-3bc1-4b3b-9030-faca2c876d60" LastKnownName="Timer" />
+      </annotatedElements>
+    </comment>
+  </ownedCommentsInternal>
+  <appliedStereotypesInternal>
+    <stereotypeInstance Id="cdb2c342-31ab-49bf-9062-8c73b25857ef" name="namespace" profile="CSharpProfile">
+      <elementDefinition Id="fcd2d14c-e1cf-4502-9a0a-6d1d169054ba" />
+      <propertyInstances>
+        <stereotypeInstanceHasPropertyInstances Id="77a80223-0937-4558-acbe-e5417a801d6d">
+          <propertyInstance Id="b1545fbd-8979-4775-9e6f-595fd41a1bfb" name="BaseName">
+            <elementDefinition Id="c1b02a30-771d-4879-a708-4b3e69e1f04f" />
+          </propertyInstance>
+          <elementDefinition Id="60c4385a-7b06-434e-b01e-68c8cd682ca6" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances Id="ac37f1c0-94cc-40b5-b5c5-5a16661d724a">
+          <propertyInstance Id="60952d42-850e-449d-8348-dc8fbc1be6e0" name="ClrAttributes">
+            <elementDefinition Id="ebc522fc-b390-4c8d-b20c-46a2bd6188a2" />
+          </propertyInstance>
+          <elementDefinition Id="c417750e-39c5-4496-b72a-741942c16a26" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances Id="851daadf-9a6d-4a49-9728-71d5c00e3ba0">
+          <propertyInstance Id="da44c866-19b9-4c78-8171-7894d2710f41" name="Usings">
+            <elementDefinition Id="69ce0b40-00e9-4a82-acc6-88499d79f32a" />
+          </propertyInstance>
+          <elementDefinition Id="2adcea9b-a228-45af-9c12-292301f2b2d5" />
+        </stereotypeInstanceHasPropertyInstances>
+      </propertyInstances>
+    </stereotypeInstance>
+    <stereotypeInstance Id="819782ea-9a9f-453a-ab28-4dbbf40311ca" name="TextTemplateBindings" profile="TextTemplateBindings">
+      <elementDefinition Id="6ed8828c-aeba-4015-b5f6-0e39bc8b4054" />
+      <propertyInstances>
+        <stereotypeInstanceHasPropertyInstances Id="8bbd334c-def0-4a9e-8a21-6d201498f051">
+          <propertyInstance Id="ced585b2-f741-4201-94e0-1acbf3d85aee" name="Alias" value="ClassTemplate|EnumTemplate|InterfaceTemplate|StructTemplate">
+            <elementDefinition Id="d21c6f07-4447-4836-a1cd-3be4106bb96e" />
+          </propertyInstance>
+          <elementDefinition Id="922301d4-a684-4a0c-a9db-e7923b9ab1da" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances Id="4cd58b23-e076-480d-9756-5aa7aaa052a0">
+          <propertyInstance Id="fa62cd1b-44ea-41eb-954e-6cc2cb015f38" name="TemplateFilePath" value="ClassTemplate=C:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO 14.0\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\ClassTemplate.t4|EnumTemplate=C:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO 14.0\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\EnumTemplate.t4|InterfaceTemplate=C:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO 14.0\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\InterfaceTemplate.t4|StructTemplate=C:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO 14.0\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\StructTemplate.t4">
+            <elementDefinition Id="80baa9e0-c19d-4bb1-a5b0-e9659dc89b7e" />
+          </propertyInstance>
+          <elementDefinition Id="26b1296d-f93b-4bc4-977f-b465f6a2a983" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances Id="47ffe244-1e86-439d-a974-cffda3706296">
+          <propertyInstance Id="5d94ddc1-2328-4fed-ab6c-7aa3efc75cdb" name="ProjectPath" value="ClassTemplate=..\UML_GameSE2Lib\UML_GameSE2Lib.csproj|EnumTemplate=..\UML_GameSE2Lib\UML_GameSE2Lib.csproj|InterfaceTemplate=..\UML_GameSE2Lib\UML_GameSE2Lib.csproj|StructTemplate=..\UML_GameSE2Lib\UML_GameSE2Lib.csproj">
+            <elementDefinition Id="ea286f23-524d-4ced-8480-d22d427be5b0" />
+          </propertyInstance>
+          <elementDefinition Id="913301e5-610a-43c7-8511-114b1c7a9a74" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances Id="d4f60902-362b-434e-9d09-bf4fe59ac11d">
+          <propertyInstance Id="575d33d1-97d4-4853-9306-2bb5763e1be4" name="TargetDirectory" value="ClassTemplate=GeneratedCode\{PackageStructure}|EnumTemplate=GeneratedCode\{PackageStructure}|InterfaceTemplate=GeneratedCode\{PackageStructure}|StructTemplate=GeneratedCode\{PackageStructure}">
+            <elementDefinition Id="05312bd1-9c29-42fe-8285-86719e20d602" />
+          </propertyInstance>
+          <elementDefinition Id="ebc7fae7-4457-41a5-ac1c-11dbb5849124" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances Id="02449db3-8977-4f46-8702-f0edd8bbc15d">
+          <propertyInstance Id="40db55cc-cd4d-47eb-8891-8ec2915788b4" name="TargetName" value="ClassTemplate={Name}|EnumTemplate={Name}|InterfaceTemplate={Name}|StructTemplate={Name}">
+            <elementDefinition Id="954d1729-935d-4505-bb91-6bddad4f6ebf" />
+          </propertyInstance>
+          <elementDefinition Id="2e43661e-8e90-4999-baba-9d14e6ab4dd1" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances Id="f26d05da-af2e-4ebb-9d3a-db3b8f8003d4">
+          <propertyInstance Id="7bddafc1-55a3-4032-824b-d0d5e098efd3" name="Overwrite" value="ClassTemplate=True|EnumTemplate=True|InterfaceTemplate=True|StructTemplate=True">
+            <elementDefinition Id="e7c14dd3-4a9c-4f48-97f1-d492ae410d50" />
+          </propertyInstance>
+          <elementDefinition Id="76fbf6ca-34db-4e04-a3ca-534bbd22441a" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances Id="6e503824-7772-4da0-b1f0-15641a0ca0f5">
+          <propertyInstance Id="e323f6fd-4128-41e5-978c-3928251a9130" name="Parameters">
+            <elementDefinition Id="cda342be-21c6-4704-b5d3-1b37e6fff7c1" />
+          </propertyInstance>
+          <elementDefinition Id="00ece7f3-77f7-4e9c-906d-54dc3306907f" />
+        </stereotypeInstanceHasPropertyInstances>
+      </propertyInstances>
+    </stereotypeInstance>
+  </appliedStereotypesInternal>
+  <packagedElements>
+    <activityRootModelHasActivity>
+      <activity Id="74b2254a-486f-477b-8e7a-ba0a946c4b9d" name="ActivityDiagram" isAbstract="false" isLeaf="false" isActiveClass="false" isReentrant="false" isReadOnly="false" isSingleExecution="false">
+        <elementDefinition Id="189cafd1-1829-4bcd-a57b-6eb8a91e2c15" />
+        <nodes>
+          <initialNode Id="633c979d-dc96-4456-88a3-5bdeb74c7256" name="GameUpdate" isLeaf="false">
+            <elementDefinition Id="7bec9397-1bb1-4f50-aa18-82bddbb268bd" />
+            <flowNodeTargets>
+              <controlFlow Id="3bf366bc-2205-4d6c-ada6-2110a3533473" isLeaf="false">
+                <decisionNodeMoniker Id="c75865b7-3bc1-4b3b-9030-faca2c876d60" LastKnownName="Timer" />
+                <elementDefinition Id="94584c5e-2917-4a1d-b2f0-b59a7c5d35da" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
+          <opaqueAction Id="2950821f-d708-49df-bcaa-2d37fbbafa43" name="MoveArrows" isLeaf="false">
+            <elementDefinition Id="7d5efb36-8db5-4881-a1e6-f64be4f82477" />
+            <flowNodeTargets>
+              <controlFlow Id="805cc06e-558d-4e9d-b670-bbc90c049b8c" isLeaf="false">
+                <activityFinalNodeMoniker Id="8a312fa9-1de6-45e1-b1d4-21c6b7ec86ad" LastKnownName="ActivityFinal1" />
+                <elementDefinition Id="0467e152-82af-40cd-990b-32f4d4775261" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="c00b5abe-0e81-4f3a-a0f9-3497faa10e76" name="MovePlayer" isLeaf="false">
+            <elementDefinition Id="541cb5c9-d660-4c17-adbb-7e837aa110ce" />
+            <flowNodeTargets>
+              <controlFlow Id="5dc7fc17-c2f4-495f-8842-d71f694281a5" isLeaf="false">
+                <opaqueActionMoniker Id="ffb31283-cea8-486f-a155-0c6c11bd4f33" LastKnownName="CalculateEnemyMoves" />
+                <elementDefinition Id="ae0082f7-8212-4662-8c18-990807917acb" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="ffb31283-cea8-486f-a155-0c6c11bd4f33" name="CalculateEnemyMoves" isLeaf="false">
+            <elementDefinition Id="e992c2a4-8ac2-4a42-8886-47499da86299" />
+            <flowNodeTargets>
+              <controlFlow Id="51681cde-f21a-4799-962f-633b526b732e" isLeaf="false">
+                <opaqueActionMoniker Id="94286233-24dc-4393-9bfa-d2986ec6275f" LastKnownName="MoveEnemies" />
+                <elementDefinition Id="427b7d5e-5c2d-45a2-9e66-de0717a06b61" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="9f9ffdf7-31c6-427d-9e2e-18b599fab6fb" name="MoveArrows" isLeaf="false">
+            <elementDefinition Id="b0d3bf50-7fa3-4b4c-aff2-dce881a4e6ba" />
+            <flowNodeTargets>
+              <controlFlow Id="39cc6da6-6218-4099-b511-a3708432dbd3" isLeaf="false">
+                <activityFinalNodeMoniker Id="f07d44ad-415e-476d-b4f1-b3b3c2681340" LastKnownName="ActivityFinal11" />
+                <elementDefinition Id="fc28df22-0d28-4af6-818d-d5b8970640db" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode Id="c75865b7-3bc1-4b3b-9030-faca2c876d60" name="Timer" isLeaf="false">
+            <elementDefinition Id="10d816be-1912-4a72-814d-3a9ae26f8507" />
+            <flowNodeTargets>
+              <controlFlow Id="4e0eaf9d-c05a-4226-a90e-d993c071fced" isLeaf="false">
+                <opaqueActionMoniker Id="2950821f-d708-49df-bcaa-2d37fbbafa43" LastKnownName="MoveArrows" />
+                <elementDefinition Id="68b0d6ec-5756-4f2e-b1cb-b1baf36eb3ac" />
+              </controlFlow>
+              <controlFlow Id="cbd318b2-64ae-47ef-b361-ba8acbd6bd2b" isLeaf="false">
+                <opaqueActionMoniker Id="c00b5abe-0e81-4f3a-a0f9-3497faa10e76" LastKnownName="MovePlayer" />
+                <elementDefinition Id="cc16a127-7bad-46e9-818b-e86adea0df18" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction Id="94286233-24dc-4393-9bfa-d2986ec6275f" name="MoveEnemies" isLeaf="false">
+            <elementDefinition Id="b3575c61-6203-403c-9a96-2a3df3b78189" />
+            <flowNodeTargets>
+              <controlFlow Id="458759b6-5b09-40a5-9159-57343b994214" isLeaf="false">
+                <opaqueActionMoniker Id="9f9ffdf7-31c6-427d-9e2e-18b599fab6fb" LastKnownName="MoveArrows" />
+                <elementDefinition Id="3f26e715-ea0d-498f-9846-1a00af7e0590" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <activityFinalNode Id="8a312fa9-1de6-45e1-b1d4-21c6b7ec86ad" name="ActivityFinal1" isLeaf="false">
+            <elementDefinition Id="8d03e2d9-c2dc-4d7b-a9b9-5b3a8ebfe6a0" />
+          </activityFinalNode>
+          <activityFinalNode Id="f07d44ad-415e-476d-b4f1-b3b3c2681340" name="ActivityFinal11" isLeaf="false">
+            <elementDefinition Id="d3661e75-e1f7-4a8d-a289-561a9b113f9a" />
+          </activityFinalNode>
+        </nodes>
+      </activity>
+    </activityRootModelHasActivity>
+  </packagedElements>
+  <package Id="027944f1-f845-4eb4-804b-68f16d7344fc" name="UML_GameSE2">
+    <elementDefinition Id="bf6011fe-c933-498a-98a5-a770195ae547" />
+    <profileInstances>
+      <packageHasProfileInstances Id="94e469e7-051f-41c8-8c98-6db648c4b53e">
+        <profileInstance Id="11ba26ac-67dd-4f92-a89e-756a380d8bc7" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="694bbbd2-c730-47cf-a47d-d84c5031e1ab">
+        <profileInstance Id="5c1a9d54-4826-4bd7-9072-599361518eae" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="e2009505-8987-4d6b-9019-6cbc3755bbcc">
+        <profileInstance Id="d8b644bb-3b04-49d4-9126-9915af93100d" name="TextTemplateBindings">
+          <elementDefinition Id="5753a93f-09fa-4b84-be22-683247fbd20f" />
+        </profileInstance>
+        <elementDefinition Id="11795ba6-dcc7-4a30-b315-414c3cf2e437" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="d6c3256a-a360-4deb-85b5-d0f78cc34bf6">
+        <profileInstance Id="b2f716e4-fd7d-4eec-b3db-3af1efc80dfa" name="CSharpProfile">
+          <elementDefinition Id="473ff14a-4239-4777-81ac-db9b6d09cd72" />
+        </profileInstance>
+        <elementDefinition Id="3f5e41d6-e0b9-4314-b71c-34963fb85c1d" />
+      </packageHasProfileInstances>
+    </profileInstances>
+  </package>
+</activityRootModel>

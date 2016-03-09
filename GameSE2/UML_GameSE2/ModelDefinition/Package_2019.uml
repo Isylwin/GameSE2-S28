@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="d1a2f473-ea0f-4b13-9f51-7d09714ef10f"
+  name="Arrows" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <ownedCommentsInternal>
+    <comment
+      Id="2c46702e-9189-43e6-b36d-d3fd8a05ec2b">
+      <body>Add more possibilities? To use power ups on!</body>
+    </comment>
+  </ownedCommentsInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <class
+        Id="23e2bc83-d5ed-4a74-b5ec-dd26e3e94807"
+        name="Flaming Arrow"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="9c0aa26c-fa07-425f-a4e3-a0903bea346d"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="d3765dfd-b937-4f36-8b3d-d5dab180d70a">
+                <propertyInstance
+                  Id="2d02ac7a-f73d-4754-a035-047a6a78bd7b"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="0e809b9c-a748-4ac1-9096-097472d6f512">
+                <propertyInstance
+                  Id="5fa8365e-13d2-4c3d-8b2e-8a234f246e19"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="9d8237e5-cfa7-4366-9588-6cb6f28e9d03">
+                <propertyInstance
+                  Id="101889d7-270f-45c3-8b3c-d31ad06cab06"
+                  name="IsStatic"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="0535a833-163a-40fa-8ebf-61117522aa5e">
+                <propertyInstance
+                  Id="8f2b0338-840c-4784-95dd-ce9158b2c0a2"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="f07275b2-8b55-4e5a-9931-d085708ef70c">
+                <propertyInstance
+                  Id="8b38a200-9ee9-4340-9edd-43ad9a148c78"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <generalsInternal>
+          <generalization
+            Id="80ab96b1-1391-4000-9bf5-92502a029cba"
+            isSubstitutable="false">
+            <classMoniker
+              Id="bf2cd9ca-560c-444a-80ac-ca4225619456"
+              LastKnownName="Arrow"
+              LastKnownLocation="Package_1951.uml" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="77bb6e7b-6aec-4f58-ad6a-6876450381c5"
+        name="Normal Arrow"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="1714e8b3-036a-4319-ac44-36adf74dcfa1"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="7b63c199-561e-419c-b019-7d029d1bc9d6">
+                <propertyInstance
+                  Id="dc5ce386-d865-4116-9b66-bf4b48dca99f"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="c80842fe-d55b-48fe-8ae8-d0692f2ac48c">
+                <propertyInstance
+                  Id="1b915e61-0787-40d2-b894-7ad89dbcba34"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="22c3cf25-1c07-40db-b101-266ffca7b45d">
+                <propertyInstance
+                  Id="54be3b5d-4542-4d4f-ab3f-7674c3c78076"
+                  name="IsStatic"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="435ee34d-a125-4a39-afc0-92736a47a2c1">
+                <propertyInstance
+                  Id="70c4e8ed-5dfe-4e3c-9a50-22cbb7ec50b2"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="b18b99f8-5d78-41c0-bbf4-3cf3b2144bad">
+                <propertyInstance
+                  Id="65ca1ec6-2498-4765-af20-9a1790ed1020"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <generalsInternal>
+          <generalization
+            Id="54cef685-6540-4d53-9cc8-9589ca4371f9"
+            isSubstitutable="false">
+            <classMoniker
+              Id="bf2cd9ca-560c-444a-80ac-ca4225619456"
+              LastKnownName="Arrow"
+              LastKnownLocation="Package_1951.uml" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>
