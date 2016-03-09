@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="063af7ef-6090-497f-91b1-6532a57cd512"
+  name="Enemies" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <ownedCommentsInternal>
+    <comment
+      Id="55c5382d-490d-4767-aa7b-e62ac8e55298">
+      <body>Flavour the enemies!
+When a theme is thought of..</body>
+    </comment>
+  </ownedCommentsInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <class
+        Id="5fc11817-c946-42f1-9f6c-358b748be0f4"
+        name="Melee"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="26b0a708-e6bb-4a6e-837b-2f1f9b47edd9"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="ac2f3d00-e8aa-4966-a32d-cab6a8370aed">
+                <propertyInstance
+                  Id="bf960271-5bc0-4960-80e2-26698dcd5ceb"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="eaec3d7c-9978-4875-ac71-f8fef4b16542">
+                <propertyInstance
+                  Id="0553cdeb-a733-44f4-a29f-a087c7a6c76b"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="16016b24-6a98-41af-b8b2-81531121f281">
+                <propertyInstance
+                  Id="e108e4b3-9810-489d-9da3-0fd606cdfc04"
+                  name="IsStatic"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="83618cd7-996f-4a1a-92a6-ea908075c64b">
+                <propertyInstance
+                  Id="880c01ec-4794-4306-8b68-f12351b77d7b"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="258218f8-3c40-4fb0-b960-a46dd0dfe90d">
+                <propertyInstance
+                  Id="ba8cd90e-b1cf-4b3e-9d2a-bab87cf28f5d"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <generalsInternal>
+          <generalization
+            Id="92218153-613d-4f3b-a983-fdde370f6c56"
+            isSubstitutable="false">
+            <classMoniker
+              Id="d7ce5b25-bd56-4f0a-93f0-5b414d94096e"
+              LastKnownName="Enemy"
+              LastKnownLocation="Package_1951.uml" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="be587368-269e-48aa-810f-6392da20dbf1"
+        name="Ranged"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="839c9e6e-ff0c-403a-bf51-1991a7d5b670"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="c29cc2f7-8a1e-4050-8ad7-6caa4ffdf88d">
+                <propertyInstance
+                  Id="28f59ea0-17f3-4d36-8f5b-90bdf139016c"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="2679f63b-9e4a-449c-bc5b-132bee28e8c5">
+                <propertyInstance
+                  Id="844fc09c-7ea3-4ccc-ba93-22fdaa33b297"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="2c7fbf48-a1a3-490a-9ca4-884e4eb505ad">
+                <propertyInstance
+                  Id="dec6065b-78be-44d2-8eca-84c876268fcf"
+                  name="IsStatic"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="023eccdb-b9ff-4af2-957e-75a87b3077ed">
+                <propertyInstance
+                  Id="3d5793b2-308a-4367-be88-afdf17752d0f"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="afa126fb-377c-4926-83ba-7a7fec62d3c6">
+                <propertyInstance
+                  Id="d42b7d5a-070d-4388-8bd3-f51cf6ba1525"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <generalsInternal>
+          <generalization
+            Id="69bd346e-06a4-46a1-9c36-818fa9218edc"
+            isSubstitutable="false">
+            <classMoniker
+              Id="d7ce5b25-bd56-4f0a-93f0-5b414d94096e"
+              LastKnownName="Enemy"
+              LastKnownLocation="Package_1951.uml" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>
