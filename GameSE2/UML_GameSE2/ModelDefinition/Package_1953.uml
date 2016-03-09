@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
   dslVersion="1.0.0.0"
   Id="7e9033df-f6d1-46fd-bd6e-8fd1f82d0806"
   name="Map" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
@@ -349,7 +349,7 @@
             Id="a6b2b137-4a76-4ff1-9108-4f19fba74eab"
             isDerived="false"
             sourceEndRoleName="Map"
-            targetEndRoleName="Cell"
+            targetEndRoleName="Cells"
             isLeaf="false"
             isAbstract="false">
             <classMoniker
@@ -373,7 +373,7 @@
               <associationHasOwnedEnds>
                 <memberEnd
                   Id="fbd934be-13e1-42ec-9a16-67bcf431573a"
-                  name="Cell"
+                  name="Cells"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
@@ -547,7 +547,7 @@
             Id="7b813c64-2b7c-4ee6-96a9-02cd55565a4f"
             isDerived="false"
             sourceEndRoleName="Path"
-            targetEndRoleName="Location"
+            targetEndRoleName="StartLocation"
             isLeaf="false"
             isAbstract="false">
             <classMoniker
@@ -571,7 +571,7 @@
               <associationHasOwnedEnds>
                 <memberEnd
                   Id="d175ef3f-4f5b-466f-bf5c-c93576f780c5"
-                  name="Location"
+                  name="StartLocation"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
@@ -586,7 +586,7 @@
             Id="3b2b4a46-5417-496e-a79c-c9ec89d1cd41"
             isDerived="false"
             sourceEndRoleName="Path"
-            targetEndRoleName="Cell"
+            targetEndRoleName="Cells"
             isLeaf="false"
             isAbstract="false">
             <classMoniker
@@ -610,7 +610,7 @@
               <associationHasOwnedEnds>
                 <memberEnd
                   Id="c904d115-2c69-46bb-8e7e-aaeaf2ecb94c"
-                  name="Cell"
+                  name="Cells"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
@@ -634,45 +634,46 @@
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
           </association>
+          <association
+            Id="4b03af2e-5999-4b5e-a070-0b62eb7c16b0"
+            isDerived="false"
+            sourceEndRoleName="Path"
+            targetEndRoleName="EndLocation"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="bc3dc095-abf9-4c7a-a4f5-e619c9355539"
+              LastKnownName="Location"
+              LastKnownLocation="Package_1953.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="92acf898-4267-41d7-ba7c-d9347bc99c3f"
+                  name="Path"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="9152d940-59b9-43cc-a419-0829f814c76a"
+                  name="EndLocation"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
         </targetEnds>
-        <ownedAttributesInternal>
-          <property
-            Id="f6e8c056-168a-4c0f-a957-4e7bed2582ed"
-            name="StartLoc"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <classMoniker
-                Id="bc3dc095-abf9-4c7a-a4f5-e619c9355539"
-                LastKnownName="Location"
-                LastKnownLocation="Package_1953.uml" />
-            </type_NamedElement>
-          </property>
-          <property
-            Id="3fdbe377-0db0-44f1-8224-1cecbde56554"
-            name="EndLoc"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <classMoniker
-                Id="bc3dc095-abf9-4c7a-a4f5-e619c9355539"
-                LastKnownName="Location"
-                LastKnownLocation="Package_1953.uml" />
-            </type_NamedElement>
-          </property>
-        </ownedAttributesInternal>
       </class>
     </packageHasNamedElement>
     <packageHasNamedElement>
