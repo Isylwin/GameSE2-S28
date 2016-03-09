@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace GameSE2.Properties
+namespace WinFormsGame.Properties
 {
 
 

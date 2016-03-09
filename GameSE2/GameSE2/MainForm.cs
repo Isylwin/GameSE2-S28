@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace GameSE2
+namespace WinFormsGame
 {
     public partial class MainForm : Form
     {

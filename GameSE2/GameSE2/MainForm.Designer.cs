@@ -1,4 +1,4 @@
-﻿namespace GameSE2
+﻿namespace WinFormsGame
 {
     partial class MainForm
     {
