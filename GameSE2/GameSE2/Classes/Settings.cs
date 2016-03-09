@@ -11,53 +11,32 @@ using System.Text;
 
 public class Settings
 {
-	public virtual int VerticalCells
-	{
-		get;
-		set;
-	}
+	public virtual int VerticalCells { get; }
 
-	public virtual int HorizontalCells
-	{
-		get;
-		set;
-	}
+	public virtual int HorizontalCells { get; }
 
-	public virtual int CellSize
-	{
-		get;
-		set;
-	}
+	public virtual int CellSize { get; }
 
-	public virtual int GameWidth
-	{
-		get;
-		set;
-	}
+	public virtual int Seed { get; }
 
-	public virtual int GameHeight
-	{
-		get;
-		set;
-	}
+    /// <summary>
+    /// Measured in cells
+    /// </summary>
+	public virtual int ViewHeight { get; }
 
-	public virtual int Seed
-	{
-		get;
-		set;
-	}
+    /// <summary>
+    /// Measured in cells
+    /// </summary>
+	public virtual int ViewWidth { get; }
 
-	public virtual int ViewHeight
-	{
-		get;
-		set;
-	}
-
-	public virtual int ViewWidth
-	{
-		get;
-		set;
-	}
+    public Settings()
+    {
+        VerticalCells = 200;
+        HorizontalCells = 200;
+        CellSize = 30;
+        ViewHeight = 930/CellSize;
+        ViewWidth = 930/CellSize;
+    }
 
 }
 

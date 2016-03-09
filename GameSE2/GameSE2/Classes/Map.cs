@@ -16,17 +16,53 @@ namespace WinFormsGame.Classes
 	{
         private Settings settings;
 
-		public virtual List<Cell> Cells { get; private set; }
+		public virtual Cell[,] Cells { get; private set; }
 
 		public Map(Settings settings)
 		{
             this.settings = settings;
+
+            Cells = new Cell[settings.HorizontalCells, settings.VerticalCells];
+
+            for (int i = 0; i < settings.HorizontalCells; i++)
+            {
+                for (int j = 0; j < settings.VerticalCells; j++)
+                {
+                    Cells[i,j] = new Cell(new Location(i, j));
+                    if (i == 0 || j == 0 || i == settings.HorizontalCells - 1 || j == settings.VerticalCells - 1)
+                        Cells[i, j].IsWall = true;
+                }
+            }
 		}
 
 		public virtual Path CalculatePath(Location startLoc, Location EndLoc)
 		{
 			throw new System.NotImplementedException();
 		}
+
+        /// <summary>
+        /// Gets the cells within the view of a certain location.
+        /// </summary>
+        /// <param name="loc">Location which should be the center.</param>
+        /// <returns>List with all the cells that are within view.</returns>
+        public List<Cell> GetViewPort(Location loc)
+        {
+            var returnValue = new List<Cell>();
+            var xStart = loc.X > settings.ViewWidth / 2 ? loc.X - settings.ViewWidth / 2 : 0;
+            var yStart = loc.Y > settings.ViewHeight ? loc.Y - settings.ViewHeight / 2 : 0;
+            var xEnd = loc.X + settings.ViewWidth / 2 < settings.HorizontalCells ? loc.X + settings.ViewWidth / 2 : settings.HorizontalCells - 1;
+            var yEnd = loc.Y + settings.ViewHeight / 2 < settings.HorizontalCells ? loc.Y + settings.ViewHeight / 2 : settings.VerticalCells - 1;
+
+            for(int i = xStart; i <= xEnd; i++ )
+            {
+                for(int j = yStart; j <= yEnd; j++)
+                {
+                    returnValue.Add(Cells[i, j]);
+                }
+            }
+
+            return returnValue;
+        }
 
 	}
 }

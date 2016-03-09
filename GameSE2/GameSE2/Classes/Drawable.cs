@@ -13,17 +13,17 @@ using WinFormsGame.Classes.MapClasses;
 
 public class Drawable
 {
-	public virtual Cell Cells
-	{
-		get;
-		set;
-	}
+	public virtual List<Cell> Cells { get; }
 
-	public virtual Entity Entities
-	{
-		get;
-		set;
-	}
+	public virtual List<Entity> Entities { get; }
+
+    public Location CenterLocation { get;}
+
+    public Drawable(List<Cell> cells, List<Entity> entities, Location loc)
+    {
+        Cells = cells;
+        CenterLocation = loc;
+    }
 
 }
 

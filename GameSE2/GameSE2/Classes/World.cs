@@ -38,7 +38,9 @@ namespace WinFormsGame.Classes
 
         public World(Settings settings)
         {
+            Settings = settings;
 
+            Map = new Map(Settings);
         }
         
         /// <summary>
@@ -59,8 +61,14 @@ namespace WinFormsGame.Classes
             throw new System.NotImplementedException();
         }
 
+        public Drawable GetViewToDraw(Location loc)
+        {
+            List<Cell> cellsToDraw = Map.GetViewPort(loc);
+
+            return new Drawable(cellsToDraw, null, loc);
+        }
+
     }
 }
 
-
-
+//TODO make sure entities are also giving to the drawable.

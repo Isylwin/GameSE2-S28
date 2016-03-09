@@ -13,18 +13,26 @@ namespace WinFormsGame.Classes.MapClasses
 
 	public class Cell
 	{
-		public virtual bool IsWall
-		{
-			get;
-			set;
-		}
+		public virtual bool IsWall { get; set; }
 
-		public virtual Location Location
-		{
-			get;
-			set;
-		}
+		public virtual Location Location { get; set; }
 
-	}
+        public Cell(Location location)
+        {
+            Location = location;
+        }
+
+        public Cell(Location location, bool isWall)
+        {
+            Location = location;
+            IsWall = isWall;
+        }
+
+        public override string ToString()
+        {
+            return Location.ToString() + " " + (IsWall ? "Wall" : "Empty");
+        }
+
+    }
 }
 
