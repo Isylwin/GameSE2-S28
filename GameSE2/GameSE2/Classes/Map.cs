@@ -14,13 +14,13 @@ namespace WinFormsGame.Classes
 
     public class Map
 	{
-        private Settings settings;
+        private Settings _settings;
 
 		public virtual Cell[,] Cells { get; private set; }
 
 		public Map(Settings settings)
 		{
-            this.settings = settings;
+            this._settings = settings;
 
             Cells = new Cell[settings.HorizontalCells, settings.VerticalCells];
 
@@ -29,7 +29,7 @@ namespace WinFormsGame.Classes
                 for (int j = 0; j < settings.VerticalCells; j++)
                 {
                     Cells[i,j] = new Cell(new Location(i, j));
-                    if (i == 0 || j == 0 || i == settings.HorizontalCells - 1 || j == settings.VerticalCells - 1)
+                    if (i == 0 || j == 0 || i == settings.HorizontalCells - 1 || j == settings.VerticalCells - 1) //Make borders a wall.
                         Cells[i, j].IsWall = true;
                 }
             }
@@ -45,13 +45,13 @@ namespace WinFormsGame.Classes
         /// </summary>
         /// <param name="loc">Location which should be the center.</param>
         /// <returns>List with all the cells that are within view.</returns>
-        public List<Cell> GetViewPort(Location loc)
+        public List<Cell> GetViewPort(Location loc) //Could return a 2D array with some trickery, doesn't seem necessary.
         {
             var returnValue = new List<Cell>();
-            var xStart = loc.X > settings.ViewWidth / 2 ? loc.X - settings.ViewWidth / 2 : 0;
-            var yStart = loc.Y > settings.ViewHeight ? loc.Y - settings.ViewHeight / 2 : 0;
-            var xEnd = loc.X + settings.ViewWidth / 2 < settings.HorizontalCells ? loc.X + settings.ViewWidth / 2 : settings.HorizontalCells - 1;
-            var yEnd = loc.Y + settings.ViewHeight / 2 < settings.HorizontalCells ? loc.Y + settings.ViewHeight / 2 : settings.VerticalCells - 1;
+            var xStart = loc.X > _settings.ViewWidth / 2 ? loc.X - _settings.ViewWidth / 2 : 0;
+            var yStart = loc.Y > _settings.ViewHeight ? loc.Y - _settings.ViewHeight / 2 : 0;
+            var xEnd = loc.X + _settings.ViewWidth / 2 < _settings.HorizontalCells ? loc.X + _settings.ViewWidth / 2 : _settings.HorizontalCells - 1;
+            var yEnd = loc.Y + _settings.ViewHeight / 2 < _settings.HorizontalCells ? loc.Y + _settings.ViewHeight / 2 : _settings.VerticalCells - 1;
 
             for(int i = xStart; i <= xEnd; i++ )
             {
@@ -64,6 +64,22 @@ namespace WinFormsGame.Classes
             return returnValue;
         }
 
+        public Location GetEmptyLocation(Random rnd)
+        {
+            Location returnLocation;
+            int tries = 0;
+
+            do
+            {
+                returnLocation = new Location(1, _settings.HorizontalCells, 1, _settings.VerticalCells, rnd);
+
+                tries++;
+                if(tries > _settings.HorizontalCells * _settings.VerticalCells)
+                    throw new Exception("Cannot find empty location.");
+
+            } while (Cells[returnLocation.X,returnLocation.Y].IsWall);
+
+            return returnLocation;
+        }
 	}
 }
-
