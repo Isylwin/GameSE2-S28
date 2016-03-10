@@ -10,20 +10,76 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using WinFormsGame.Classes.EntityClasses;
+using WinFormsGame.Classes;
+using WinFormsGame.Classes.EntityClasses.Enemies;
+using WinFormsGame.Classes.MapClasses;
 
 public class Level
 {
-	public virtual int LevelNumber
-	{
-		get;
-		set;
-	}
+    private Settings _settings;
+    private List<Entity> _entities;
+    private int _levelNumber;
 
-	public virtual IEnumerable<Enemy> Enemies
-	{
-		get;
-		set;
-	}
+    public Player Player
+    {
+        get
+        {
+            return _entities.Find(x => x is Player) as Player;
+        }
+    }
+
+    public List<Enemy> Enemies
+    {
+        get
+        {
+            return _entities.OfType<Enemy>().Select(x => x).ToList();
+        }
+    }
+
+    public List<Arrow> Arrows
+    {
+        get
+        {
+            return _entities.OfType<Arrow>().Select(x => x).ToList();
+        }
+    }
+
+    public Map Map { get; }
+    
+    public List<PowerUp> PowerUps { get; }
+
+    public Level(Settings settings, int levelNumber)
+    {
+        _settings = settings;
+        _levelNumber = levelNumber;
+
+        Map = new Map(_settings);
+        CreateNewEntities();
+    }
+
+    private void CreateNewEntities()
+    {
+        Random rnd = new Random();
+        _entities = new List<Entity>();
+
+        var playerLoc = Map.GetEmptyLocation(rnd);
+
+        _entities.Add(new Player(playerLoc));
+
+        for (int i = 0; i < 30; i++)
+        {
+            Location enemyLocation;          
+
+            do
+            {
+                enemyLocation = Map.GetEmptyLocation(rnd);
+            } while ((playerLoc.X - 15 <= enemyLocation.X && enemyLocation.X <= playerLoc.X + 15 
+            || playerLoc.Y - 15 <= enemyLocation.Y && enemyLocation.Y <= playerLoc.Y + 15)
+            && _entities.Exists(x => x.Location == enemyLocation));
+
+            _entities.Add(new Melee(enemyLocation));
+        }
+    } 
 
 }
 
