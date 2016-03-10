@@ -4,15 +4,22 @@
 //     Changes to this file will be lost if the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
+
+
+
 namespace WinFormsGame.Classes.EntityClasses
 {
 	using System;
 	using System.Collections.Generic;
 	using System.Linq;
 	using System.Text;
+    using MapClasses;
 
-	public abstract class Arrow : Entity
-	{
-	}
+    public abstract class Arrow : Entity
+    {
+        public Arrow(Location loc) : base(loc)
+        {
+        }
+    }
 }
 

@@ -11,9 +11,14 @@ namespace WinFormsGame.Classes.EntityClasses.Arrows
 	using System.Collections.Generic;
 	using System.Linq;
 	using System.Text;
+    using MapClasses;
 
 	public class Flaming_Arrow : Arrow
 	{
+	    public Flaming_Arrow(Location loc) : base(loc)
+	    {
+	        
+	    }
 	}
 }
 

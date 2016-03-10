@@ -11,9 +11,13 @@ namespace WinFormsGame.Classes.EntityClasses.Enemies
 	using System.Collections.Generic;
 	using System.Linq;
 	using System.Text;
+    using MapClasses;
 
 	public class Melee : Enemy
 	{
-	}
+        public Melee(Location loc) : base(loc)
+        {
+        }
+    }
 }
 

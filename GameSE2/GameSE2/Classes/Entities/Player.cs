@@ -10,15 +10,20 @@ namespace WinFormsGame.Classes.EntityClasses
 	using System.Collections.Generic;
 	using System.Linq;
 	using System.Text;
+    using MapClasses;
 
 	public class Player : Entity
 	{
-		public virtual PowerUp PowerUp
+		public PowerUp PowerUp
 		{
 			get;
 			set;
 		}
 
-	}
+        public Player(Location loc) : base(loc)
+        {
+        }
+
+    }
 }
 

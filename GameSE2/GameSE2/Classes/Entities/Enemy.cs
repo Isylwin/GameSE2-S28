@@ -10,6 +10,7 @@ namespace WinFormsGame.Classes.EntityClasses
 	using System.Collections.Generic;
 	using System.Linq;
 	using System.Text;
+    using MapClasses;
 
 	public abstract class Enemy : Entity
 	{
@@ -19,6 +20,10 @@ namespace WinFormsGame.Classes.EntityClasses
 			set;
 		}
 
-	}
+        public Enemy(Location loc) : base(loc)
+        {
+        }
+
+    }
 }
 

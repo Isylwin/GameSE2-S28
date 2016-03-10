@@ -9,6 +9,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using GameSE2.Classes.MapClasses;
 using WinFormsGame.Classes.MapClasses;
 
 /// <summary>
@@ -20,29 +21,18 @@ public abstract class Entity
 	/// <summary>
 	/// Amount of hitpoints
 	/// </summary>
-	public virtual int Hitpoints
-	{
-		get;
-		set;
-	}
+	public virtual int Hitpoints { get; set; }
 
-	public virtual int Damage
-	{
-		get;
-		set;
-	}
+	public virtual int Damage { get; }
 
-	public virtual Location Location
-	{
-		get;
-		set;
-	}
+	public virtual Location Location { get; set; }
 
-	public virtual Location Vector
-	{
-		get;
-		set;
-	}
+	public virtual Vector Vector { get; set; }
+
+    public Entity(Location loc)
+    {
+        Location = loc;
+    }
 
 }
 

@@ -11,9 +11,14 @@ namespace WinFormsGame.Classes.EntityClasses.Arrows
 	using System.Collections.Generic;
 	using System.Linq;
 	using System.Text;
+    using MapClasses;
 
 	public class Normal_Arrow : Arrow
 	{
+	    public Normal_Arrow(Location loc) : base(loc)
+	    {
+	        
+	    }
 	}
 }
 
