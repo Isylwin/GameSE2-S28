@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Text;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,42 +15,46 @@ namespace WinFormsGame
 {
     public partial class MainForm : Form
     {
-        private World _world;
-        private Settings _settings;
+        private const int HorizontalCells = 100;
+        private const int VerticalCells = 100;
+        private const int CellSize = 30;
 
-        private Location testLocation;
+        private readonly World _world;
+        private readonly Settings _settings;
+
+        private readonly Location _testLocation;
 
         public MainForm()
         {
-            _settings = new Settings();
-            _world = new World(_settings);
-
-            testLocation = new Location(15, 15);
-
             InitializeComponent();
             SetFullScreen();
+
+            _settings = new Settings(VerticalCells, HorizontalCells, pbGame.Height, pbGame.Width, CellSize);
+            _world = new World(_settings);
+
+            _testLocation = new Location(15, 15);
         }
 
         private void SetFullScreen()
         {
-            this.WindowState = FormWindowState.Normal;
-            this.FormBorderStyle = FormBorderStyle.None;
-            this.Bounds = Screen.PrimaryScreen.Bounds;
+            WindowState = FormWindowState.Normal;
+            FormBorderStyle = FormBorderStyle.None;
+            Bounds = Screen.PrimaryScreen.Bounds;
         }
 
         private void pbGame_Paint(object sender, PaintEventArgs e)
         {
-            DrawWorld(e.Graphics,_world.GetViewToDraw(testLocation));
+            DrawWorld(e.Graphics,_world.GetViewToDraw(_testLocation));
         }
 
         private void DrawWorld(Graphics g, Drawable toDraw)
         {
-            int xOffset = (_settings.ViewWidth / 2) - toDraw.CenterLocation.X; //in cells
-            int yOffset = (_settings.ViewHeight / 2) - toDraw.CenterLocation.Y; //in cells
+            var xOffset = (_settings.ViewWidth / 2) - toDraw.CenterLocation.X; //in cells
+            var yOffset = (_settings.ViewHeight / 2) - toDraw.CenterLocation.Y; //in cells
 
-            foreach(Cell cell in toDraw.Cells)
+            foreach(var cell in toDraw.Cells)
             {
-                Image image = cell.IsWall ? ilMapItems.Images[1] : ilMapItems.Images[0];
+                var image = cell.IsWall ? ilMapItems.Images[1] : ilMapItems.Images[0];
                 g.DrawImage(image, (cell.Location.X + xOffset) * _settings.CellSize, 
                     (cell.Location.Y + yOffset) * _settings.CellSize);
             }
@@ -60,16 +65,16 @@ namespace WinFormsGame
             switch(e.KeyChar)
             {
                 case 'a':
-                    testLocation.X--;
+                    _testLocation.X--;
                     break;
                 case 'd':
-                    testLocation.X++;
+                    _testLocation.X++;
                     break;
                 case 'w':
-                    testLocation.Y--;
+                    _testLocation.Y--;
                     break;
                 case 's':
-                    testLocation.Y++;
+                    _testLocation.Y++;
                     break;
             }
 
