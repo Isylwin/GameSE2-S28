@@ -29,13 +29,14 @@ public class Settings
     /// </summary>
 	public virtual int ViewWidth { get; }
 
-    public Settings()
+    public Settings(int verticalCells, int horizontalCells, int displayHeight, int displayWidth, int cellSize)
     {
-        VerticalCells = 200;
-        HorizontalCells = 200;
-        CellSize = 30;
-        ViewHeight = 930/CellSize;
-        ViewWidth = 930/CellSize;
+        VerticalCells = verticalCells;
+        HorizontalCells = horizontalCells;
+        CellSize = cellSize;
+
+        ViewHeight = displayHeight/CellSize;
+        ViewWidth = displayWidth/CellSize;       
     }
 
 }
