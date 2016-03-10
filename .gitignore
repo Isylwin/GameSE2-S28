@@ -234,3 +234,5 @@ _Pvt_Extensions
 
 # FAKE - F# Make
 .fake/
+
+GameSE2/UML_GameSE2/CodeGeneration.Log.xml
