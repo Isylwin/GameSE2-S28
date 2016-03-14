@@ -15,8 +15,8 @@ namespace WinFormsGame
 {
     public partial class MainForm : Form
     {
-        private const int HorizontalCells = 100;
-        private const int VerticalCells = 100;
+        private const int HorizontalCells = 99;
+        private const int VerticalCells = 99;
         private const int CellSize = 30;
 
         private readonly World _world;

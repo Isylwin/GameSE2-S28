@@ -4,6 +4,10 @@
 //     Changes to this file will be lost if the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
+
+using System.CodeDom.Compiler;
+using GameSE2.Classes.MapClasses;
+
 namespace WinFormsGame.Classes
 {
     using System;
@@ -28,11 +32,11 @@ namespace WinFormsGame.Classes
             {
                 for (int j = 0; j < settings.VerticalCells; j++)
                 {
-                    Cells[i,j] = new Cell(new Location(i, j));
-                    if (i == 0 || j == 0 || i == settings.HorizontalCells - 1 || j == settings.VerticalCells - 1) //Make borders a wall.
-                        Cells[i, j].IsWall = true;
+                    Cells[i,j] = new Cell(new Location(i, j), true); //Make a map will all walls.
                 }
             }
+
+            MapGenerator.GenerateMap(_settings, Cells);
 		}
 
 		public virtual Path CalculatePath(Location startLoc, Location EndLoc)
@@ -81,5 +85,73 @@ namespace WinFormsGame.Classes
 
             return returnLocation;
         }
+
+        //private void DivideMap(int xLeft, int xRight, int yTop, int yBottom, Random rnd)
+        //{
+        //    if (!(xRight - xLeft < 4 || yBottom - yTop < 4))
+        //    {
+        //        int x;
+        //        int y;
+
+
+        //        x = rnd.Next(xLeft + 2, xRight - 1);
+        //        y = rnd.Next(yTop + 2, yBottom - 1);
+
+        //        for (int i = yTop + 1; i < yBottom; i++)
+        //        {
+        //            Cells[x, i].IsWall = true;
+        //        }
+        //        for (int j = xLeft + 1; j < xRight; j++)
+        //        {
+        //            Cells[j, y].IsWall = true;
+        //        }
+
+        //        int decider = rnd.Next(0, 4);
+        //        Cell[] doors = new Cell[4];
+
+        //        doors[0] = Cells[rnd.Next(xLeft + 1, x), y];
+        //        doors[1] = Cells[rnd.Next(x + 1, xRight), y];
+        //        doors[2] = Cells[x, rnd.Next(yTop + 1, y)];
+        //        doors[3] = Cells[x, rnd.Next(y + 1, yBottom)];
+
+        //        foreach (var door in doors)
+        //        {
+        //            door.IsWall = false;
+        //        }
+
+        //        doors[decider].IsWall = true;
+
+        //        DivideMap(xLeft, x, yTop, y, rnd);
+        //        DivideMap(xLeft, x, y, yBottom, rnd);
+        //        DivideMap(x, xRight, yTop, y, rnd);
+        //        DivideMap(x, xRight, y, yBottom, rnd);
+        //    }
+        //}
+
+        //private void SmoothMap()
+        //{
+        //    for (int i = 1; i < _settings.HorizontalCells - 1; i++)
+        //    {
+        //        for (int j = 1; j < _settings.VerticalCells - 1; j++)
+        //        {
+        //            var topLeft = Cells[i - 1, j - 1];
+        //            var top = Cells[i, j - 1];
+        //            var topRight = Cells[i + 1, j - 1];
+        //            var left = Cells[i - 1, j];
+        //            var self = Cells[i, j];
+        //            var right = Cells[i + 1, j];
+        //            var bottomLeft = Cells[i - 1, j + 1];
+        //            var bottom = Cells[i, j + 1];
+        //            var bottomRight = Cells[i + 1, j + 1];
+
+        //            if (!self.IsWall && !topLeft.IsWall && !left.IsWall && top.IsWall && !topRight.IsWall && right.IsWall)
+        //            {
+        //                self.IsWall = true;
+        //                top.IsWall = false;
+        //            }
+
+        //        }
+        //    }
+        //}
 	}
 }

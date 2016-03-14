@@ -17,7 +17,7 @@ public class Settings
 
 	public virtual int CellSize { get; }
 
-	public virtual int Seed { get; }
+	public Random MapRandom { get; }
 
     /// <summary>
     /// Measured in cells
@@ -36,7 +36,9 @@ public class Settings
         CellSize = cellSize;
 
         ViewHeight = displayHeight/CellSize;
-        ViewWidth = displayWidth/CellSize;       
+        ViewWidth = displayWidth/CellSize;     
+        
+        MapRandom = new Random(500);  //TODO not give maprandom a specified random unless told so
     }
 
 }

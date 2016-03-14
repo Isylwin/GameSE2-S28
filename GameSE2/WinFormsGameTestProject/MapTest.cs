@@ -1,4 +1,5 @@
 ﻿using System;
+using GameSE2.Classes.MapClasses;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using WinFormsGame;
 using WinFormsGame.Classes.MapClasses;
@@ -9,6 +10,8 @@ namespace WinFormsGameTestProject
     [TestClass]
     public class MapTest
     {
+        private Settings _settings = new Settings(99, 99, 30, 930, 930);
+
         [TestMethod]
         public void CellCreation()
         {
@@ -38,7 +41,7 @@ namespace WinFormsGameTestProject
         [TestMethod]
         public void MapCreation()
         {
-            Map map = new Map(new Settings(200,200,30,930,930));
+            Map map = new Map(_settings);
 
             Assert.AreEqual(50, map.Cells[50, 176].Location.X, "Cell in incorrect X location");
             Assert.AreEqual(174, map.Cells[67, 174].Location.Y, "Cell in incorrect Y location");
@@ -61,6 +64,24 @@ namespace WinFormsGameTestProject
             Assert.AreEqual(true, a != b, "!= success incorrect");
             Assert.AreEqual(false, b == a, "== fail incorrect");
             Assert.AreEqual(false, d == a, "Null reference not caught");
+        }
+
+        [TestMethod]
+        public void ClusterTests()
+        {
+            //var Cells = new Cell[_settings.HorizontalCells, _settings.VerticalCells];
+
+            //for (int i = 0; i < _settings.HorizontalCells; i++)
+            //{
+            //    for (int j = 0; j < _settings.VerticalCells; j++)
+            //    {
+            //        Cells[i, j] = new Cell(new Location(i, j), true); //Make a map will all walls.
+            //    }
+            //}
+
+            //Cluster cluster = new Cluster(Cells[67,12], Cells);
+
+            //Assert.AreEqual(8, cluster.Neighbours.Count);
         }
     }
 }

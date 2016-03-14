@@ -57,8 +57,10 @@
     <Compile Include="Classes\Entity.cs" />
     <Compile Include="Classes\Level.cs" />
     <Compile Include="Classes\MapClasses\Cell.cs" />
+    <Compile Include="Classes\MapClasses\Cluster.cs" />
     <Compile Include="Classes\MapClasses\Location.cs" />
     <Compile Include="Classes\Map.cs" />
+    <Compile Include="Classes\MapClasses\MapGenerator.cs" />
     <Compile Include="Classes\MapClasses\Path.cs" />
     <Compile Include="Classes\MapClasses\Vector.cs" />
     <Compile Include="Classes\PowerUp.cs" />
