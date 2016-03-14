@@ -20,6 +20,9 @@ public class Level
     private List<Entity> _entities;
     private int _levelNumber;
 
+    /// <summary>
+    /// The current player in the game,
+    /// </summary>
     public Player Player
     {
         get
@@ -28,6 +31,9 @@ public class Level
         }
     }
 
+    /// <summary>
+    /// All the enemies in the level.
+    /// </summary>
     public List<Enemy> Enemies
     {
         get
@@ -36,6 +42,9 @@ public class Level
         }
     }
 
+    /// <summary>
+    /// All the arrows in the level.
+    /// </summary>
     public List<Arrow> Arrows
     {
         get
@@ -44,42 +53,64 @@ public class Level
         }
     }
 
+    /// <summary>
+    /// Retries the current map that is used.
+    /// </summary>
     public Map Map { get; }
     
+    /// <summary>
+    /// All the powerups that are in the level.
+    /// </summary>
     public List<PowerUp> PowerUps { get; }
 
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="settings">Game settings</param>
+    /// <param name="levelNumber">The level number</param>
     public Level(Settings settings, int levelNumber)
     {
         _settings = settings;
         _levelNumber = levelNumber;
-
-        Map = new Map(_settings);
-        CreateNewEntities();
-    }
-
-    private void CreateNewEntities()
-    {
-        Random rnd = new Random();
         _entities = new List<Entity>();
 
-        var playerLoc = Map.GetEmptyLocation(rnd);
+        Map = new Map(_settings);
+        PowerUps = new List<PowerUp>();
+
+        CreatePlayer();
+        CreateEnemies();
+    }
+
+    /// <summary>
+    /// Currently spawns the player at a random location.
+    /// </summary>
+    private void CreatePlayer()
+    {
+        var playerLoc = Map.GetEmptyLocation();
 
         _entities.Add(new Player(playerLoc));
+    }
 
+    /// <summary>
+    /// Creates new enemies at least 15 cells away from the player.
+    /// </summary>
+    private void CreateEnemies()
+    {          
         for (int i = 0; i < 30; i++)
         {
-            Location enemyLocation;          
+            Location enemyLocation;
+            bool isInRangeOfPlayer;   
 
+            //Keep getting a location until you've found a spot thats not too close to the player and unoccupied
             do
             {
-                enemyLocation = Map.GetEmptyLocation(rnd);
-            } while ((playerLoc.X - 15 <= enemyLocation.X && enemyLocation.X <= playerLoc.X + 15 
-            || playerLoc.Y - 15 <= enemyLocation.Y && enemyLocation.Y <= playerLoc.Y + 15)
-            && _entities.Exists(x => x.Location == enemyLocation));
+                enemyLocation = Map.GetEmptyLocation();
+                isInRangeOfPlayer = ((Player.Location.X - 15 <= enemyLocation.X && enemyLocation.X <= Player.Location.X + 15)
+                                      ||
+                                      (Player.Location.Y - 15 <= enemyLocation.Y && enemyLocation.Y <= Player.Location.Y + 15));
+            } while ( isInRangeOfPlayer || _entities.Exists(x => x.Location == enemyLocation));
 
             _entities.Add(new Melee(enemyLocation));
         }
     } 
-
 }
-

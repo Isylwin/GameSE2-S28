@@ -13,6 +13,9 @@ namespace WinFormsGame.Classes.MapClasses
 
 	public class Location
 	{
+        //Default random constructor gets its from current time. Provides problems at runtime thus location needs a static random.
+	    private static Random rnd = new Random();
+
 		public int X { get; set; }
 		public int Y { get; set; }
 
@@ -29,9 +32,8 @@ namespace WinFormsGame.Classes.MapClasses
         /// <param name="xMax">Maximum x-coordinate</param>
         /// <param name="yMin">Minimum y-coordinate</param>
         /// <param name="yMax">Maximum y-coordinate</param>
-	    public Location(int xMin, int xMax, int yMin, int yMax, Random rnd)
-	    {
-            //Random rnd = new Random();
+	    public Location(int xMin, int xMax, int yMin, int yMax)
+	    {          
 	        X = rnd.Next(xMin, xMax);
 	        Y = rnd.Next(yMin, yMax);
 	    }
@@ -50,9 +52,9 @@ namespace WinFormsGame.Classes.MapClasses
 
 	    public static bool operator ==(Location a, Location b)
 	    {
-            if (object.ReferenceEquals(a, null))
+            if (ReferenceEquals(a, null))
             {
-                return object.ReferenceEquals(b, null);
+                return ReferenceEquals(b, null);
             }
 
             return a.Equals(b);
@@ -61,6 +63,11 @@ namespace WinFormsGame.Classes.MapClasses
 	    public static bool operator !=(Location a, Location b)
 	    {
 	        return !(a == b);
+	    }
+
+	    public override int GetHashCode()
+	    {
+	        return base.GetHashCode();
 	    }
 	}
 }

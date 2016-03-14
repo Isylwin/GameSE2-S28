@@ -15,6 +15,8 @@ namespace WinFormsGame
 {
     public partial class MainForm : Form
     {
+        //Constraints of the levelsize: needs to be atleast 17 big and an uneven number of cells.
+
         private const int HorizontalCells = 99;
         private const int VerticalCells = 99;
         private const int CellSize = 30;
@@ -49,8 +51,8 @@ namespace WinFormsGame
 
         private void DrawWorld(Graphics g, Drawable toDraw)
         {
-            var xOffset = (_settings.ViewWidth / 2) - toDraw.CenterLocation.X; //in cells
-            var yOffset = (_settings.ViewHeight / 2) - toDraw.CenterLocation.Y; //in cells
+            var xOffset = _settings.ViewWidth / 2 - toDraw.CenterLocation.X; //in cells
+            var yOffset = _settings.ViewHeight / 2 - toDraw.CenterLocation.Y; //in cells
 
             foreach(var cell in toDraw.Cells)
             {
@@ -82,3 +84,7 @@ namespace WinFormsGame
         }
     }
 }
+
+
+//TODO add test code for random map generation.
+//TODO add test code for entity creation.
