@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Entity" Collapsed="true">
+    <Position X="10.75" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAIAAAAAAAAIAAAAAAAQAAAAAAEAAAAAAAAA=</HashCode>
+      <FileName>Classes\Entities\Entity.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Level" Collapsed="true">
+    <Position X="10.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAEAABAIAAAAgAABAAAAAAEEAAAAAAiAAQAAAAA=</HashCode>
+      <FileName>Classes\Level.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Settings" Collapsed="true">
+    <Position X="5.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAACAAAAAAAAAAAEACAQEAAAAAAAAAACA=</HashCode>
+      <FileName>Classes\Settings.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WinFormsGame.Classes.EntityClasses.Arrow" Collapsed="true">
+    <Position X="13" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\Entities\Arrow.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WinFormsGame.Classes.EntityClasses.Enemy" Collapsed="true">
+    <Position X="8.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\Entities\Enemy.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WinFormsGame.Classes.EntityClasses.Player" Collapsed="true">
+    <Position X="10.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\Entities\Player.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WinFormsGame.Classes.Map" Collapsed="true">
+    <Position X="14.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAABAAAAAAAAAAAAgAIAAABAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\MapClasses\Map.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WinFormsGame.Classes.PowerUp" Collapsed="true">
+    <Position X="11.75" Y="11" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\PowerUp\PowerUp.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WinFormsGame.Classes.World" Collapsed="true">
+    <Position X="8.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAIAAAgAAAAAAIAAAhAAABAAAAACAAAAA=</HashCode>
+      <FileName>Classes\World.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WinFormsGame.Classes.MapClasses.Cell" Collapsed="true">
+    <Position X="14.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAIAAAAAAAAAgAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\MapClasses\Cell.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WinFormsGame.Classes.MapClasses.Cluster" Collapsed="true">
+    <Position X="16.5" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>Classes\MapClasses\Cluster.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WinFormsGame.Classes.MapClasses.Location" Collapsed="true">
+    <Position X="14.25" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAAAAAAEgAAAAAAAAAAAAIAAAAAAAAAAYiA=</HashCode>
+      <FileName>Classes\MapClasses\Location.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WinFormsGame.Classes.MapClasses.MapGenerator" Collapsed="true">
+    <Position X="14.25" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA=</HashCode>
+      <FileName>Classes\MapClasses\MapGenerator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WinFormsGame.Classes.MapClasses.Path" Collapsed="true">
+    <Position X="12" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAAAAAAAAAAAIAEAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\MapClasses\Path.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameSE2.Classes.MapClasses.Vector" Collapsed="true">
+    <Position X="8.25" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAABAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\MapClasses\Vector.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WinFormsGame.Classes.PowerUpClasses.Blue" Collapsed="true">
+    <Position X="13" Y="12.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\PowerUp\Blue.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WinFormsGame.Classes.PowerUpClasses.Green" Collapsed="true">
+    <Position X="15.25" Y="12.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\PowerUp\Green.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WinFormsGame.Classes.PowerUpClasses.Red" Collapsed="true">
+    <Position X="8.5" Y="12.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\PowerUp\Red.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WinFormsGame.Classes.PowerUpClasses.Yellow" Collapsed="true">
+    <Position X="10.75" Y="12.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\PowerUp\Yellow.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WinFormsGame.MainForm" Collapsed="true">
+    <Position X="5.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAgADAAEGCAEACAAAAQAAAAAAAAGA=</HashCode>
+      <FileName>MainForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

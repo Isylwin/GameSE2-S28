@@ -53,12 +53,6 @@
     <Content Include="ModelDefinition\Package_1953.uml">
       <SubType>Content</SubType>
     </Content>
-    <Content Include="ModelDefinition\Package_2019.uml">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="ModelDefinition\Package_2022.uml">
-      <SubType>Content</SubType>
-    </Content>
     <Content Include="ModelDefinition\UML_GameSE2.uml">
       <SubType>Content</SubType>
     </Content>
