@@ -14,16 +14,9 @@ namespace WinFormsGame.Classes.EntityClasses
 
 	public class Player : Entity
 	{
-		public PowerUp PowerUp
-		{
-			get;
-			set;
-		}
-
         public Player(Location loc) : base(loc)
         {
         }
-
     }
 }
 

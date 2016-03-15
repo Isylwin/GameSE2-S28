@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
+using System.Windows.Forms;
 using WinFormsGame.Classes.MapClasses;
 using WinFormsGame.Classes.EntityClasses;
 
@@ -11,8 +13,6 @@ namespace WinFormsGame.Classes
     public class World
     {
         private readonly Settings _settings;
-
-        //public int Score { get; }
         
         public int LevelNumber { get; }     
 
@@ -29,26 +29,41 @@ namespace WinFormsGame.Classes
         /// <summary>
         /// Needs the keys from the form that are currently active.
         /// </summary>
-        public void Update()
+        public void Update(List<Keys> keys)
         {
-            throw new System.NotImplementedException();
+            MovePlayer(keys);
         }
 
-        private void MovePlayer()
+        private void MovePlayer(List<Keys> keys)
         {
-            throw new System.NotImplementedException();
+            var xAxis = 0;
+            var yAxis = 0;
+            Location newLoc;
+
+            if (keys.Exists(x => x == Keys.D))
+                xAxis++;
+            if (keys.Exists(x => x == Keys.A))
+                xAxis--;
+
+            newLoc = new Location(Level.Player.Location.X + xAxis, Level.Player.Location.Y);
+
+            if(Level.Map.IsLocationEmpty(newLoc))
+                Level.Player.Move(newLoc);
+
+            if (keys.Exists(x => x == Keys.S))
+                yAxis++;
+            if (keys.Exists(x => x == Keys.W))
+                yAxis--;
+
+            newLoc = new Location(Level.Player.Location.X, Level.Player.Location.Y + yAxis);
+
+            if(Level.Map.IsLocationEmpty(newLoc))
+                Level.Player.Move(newLoc);
         }
 
-        private void MoveArrows()
+        public ViewPort GetViewToDraw()
         {
-            throw new System.NotImplementedException();
-        }
-
-        public Drawable GetViewToDraw(Location loc)
-        {
-            var cellsToDraw = Level.Map.GetViewPort(loc);
-
-            return new Drawable(cellsToDraw, null, loc);
+            return Level.ViewPort;
         }
 
         private void CreateNewLevel()

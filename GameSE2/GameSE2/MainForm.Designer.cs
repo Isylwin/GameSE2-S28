@@ -32,6 +32,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.pbGame = new System.Windows.Forms.PictureBox();
             this.ilMapItems = new System.Windows.Forms.ImageList(this.components);
+            this.GameTimer = new System.Windows.Forms.Timer(this.components);
+            this.ilEntities = new System.Windows.Forms.ImageList(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pbGame)).BeginInit();
             this.SuspendLayout();
             // 
@@ -52,6 +54,18 @@
             this.ilMapItems.Images.SetKeyName(0, "Floor30x30_v2.png");
             this.ilMapItems.Images.SetKeyName(1, "Wall30x30_v3.png");
             // 
+            // GameTimer
+            // 
+            this.GameTimer.Interval = 50;
+            this.GameTimer.Tick += new System.EventHandler(this.Update);
+            // 
+            // ilEntities
+            // 
+            this.ilEntities.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("ilEntities.ImageStream")));
+            this.ilEntities.TransparentColor = System.Drawing.Color.Transparent;
+            this.ilEntities.Images.SetKeyName(0, "Player_v2.png");
+            this.ilEntities.Images.SetKeyName(1, "Skeleton_v1.png");
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -60,7 +74,8 @@
             this.Controls.Add(this.pbGame);
             this.Name = "MainForm";
             this.Text = "Form1";
-            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.MainForm_KeyPress);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MainForm_KeyDown);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.MainForm_KeyUp);
             ((System.ComponentModel.ISupportInitialize)(this.pbGame)).EndInit();
             this.ResumeLayout(false);
 
@@ -70,6 +85,8 @@
 
         private System.Windows.Forms.PictureBox pbGame;
         private System.Windows.Forms.ImageList ilMapItems;
+        private System.Windows.Forms.Timer GameTimer;
+        private System.Windows.Forms.ImageList ilEntities;
     }
 }
 

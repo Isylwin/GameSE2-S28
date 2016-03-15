@@ -15,7 +15,7 @@ namespace WinFormsGame.Classes.EntityClasses
 	using System.Text;
     using MapClasses;
 
-    public abstract class Arrow : Entity
+    public class Arrow : Entity
     {
         public Arrow(Location loc) : base(loc)
         {

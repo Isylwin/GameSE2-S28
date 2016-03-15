@@ -27,9 +27,12 @@ public abstract class Entity
 
 	public virtual Location Location { get; set; }
 
-	public virtual Vector Vector { get; set; }
-
     public Entity(Location loc)
+    {
+        Location = loc;
+    }
+
+    public void Move(Location loc)
     {
         Location = loc;
     }

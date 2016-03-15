@@ -6,12 +6,6 @@
 
         public int YAxis { get; set; }
 
-        public Vector(int x, int y)
-        {
-            XAxis = x;
-            YAxis = y;
-        }
-
         public override string ToString()
         {
             if (XAxis != 0)

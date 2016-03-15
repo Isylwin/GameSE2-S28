@@ -10,13 +10,13 @@
 			set;
 		}
 
-		public virtual IEnumerable<Cell> Cells
-		{
-			get;
-			set;
-		}
+        public virtual List<Cell> Cells
+        {
+            get;
+            set;
+        }
 
-		public virtual Location EndLocation
+        public virtual Location EndLocation
 		{
 			get;
 			set;

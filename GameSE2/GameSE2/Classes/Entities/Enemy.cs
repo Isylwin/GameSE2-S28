@@ -12,15 +12,9 @@ namespace WinFormsGame.Classes.EntityClasses
 	using System.Text;
     using MapClasses;
 
-	public abstract class Enemy : Entity
+	public class Enemy : Entity
 	{
-		public virtual bool CanShoot
-		{
-			get;
-			set;
-		}
-
-        public Enemy(Location loc) : base(loc)
+		public Enemy(Location loc) : base(loc)
         {
         }
 

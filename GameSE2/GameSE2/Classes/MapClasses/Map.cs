@@ -13,7 +13,7 @@ namespace WinFormsGame.Classes
         /// </summary>
 		public Cell[,] Cells { get; }
 
-		public Map(Settings settings)
+        public Map(Settings settings)
 		{
             _settings = settings;
 
@@ -80,9 +80,14 @@ namespace WinFormsGame.Classes
                 if(tries > _settings.HorizontalCells * _settings.VerticalCells)
                     throw new Exception("Cannot find empty location.");
 
-            } while (Cells[returnLocation.X,returnLocation.Y].IsWall);
+            } while (!IsLocationEmpty(returnLocation));
 
             return returnLocation;
+        }
+
+        public bool IsLocationEmpty(Location loc)
+        {
+            return !Cells[loc.X, loc.Y].IsWall;
         }
 	}
 }

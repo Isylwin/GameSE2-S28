@@ -46,24 +46,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Classes\Drawable.cs" />
+    <Compile Include="Classes\ViewPort.cs" />
     <Compile Include="Classes\Entities\Arrow.cs" />
-    <Compile Include="Classes\Entities\Arrows\Flaming_Arrow.cs" />
-    <Compile Include="Classes\Entities\Arrows\Normal_Arrow.cs" />
-    <Compile Include="Classes\Entities\Enemies\Melee.cs" />
-    <Compile Include="Classes\Entities\Enemies\Ranged.cs" />
     <Compile Include="Classes\Entities\Enemy.cs" />
     <Compile Include="Classes\Entities\Player.cs" />
-    <Compile Include="Classes\Entity.cs" />
+    <Compile Include="Classes\Entities\Entity.cs" />
     <Compile Include="Classes\Level.cs" />
     <Compile Include="Classes\MapClasses\Cell.cs" />
     <Compile Include="Classes\MapClasses\Cluster.cs" />
     <Compile Include="Classes\MapClasses\Location.cs" />
-    <Compile Include="Classes\Map.cs" />
+    <Compile Include="Classes\MapClasses\Map.cs" />
     <Compile Include="Classes\MapClasses\MapGenerator.cs" />
     <Compile Include="Classes\MapClasses\Path.cs" />
     <Compile Include="Classes\MapClasses\Vector.cs" />
-    <Compile Include="Classes\PowerUp.cs" />
+    <Compile Include="Classes\PowerUp\PowerUp.cs" />
     <Compile Include="Classes\PowerUp\Blue.cs" />
     <Compile Include="Classes\PowerUp\Green.cs" />
     <Compile Include="Classes\PowerUp\Red.cs" />
@@ -91,6 +87,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="ClassDiagram.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

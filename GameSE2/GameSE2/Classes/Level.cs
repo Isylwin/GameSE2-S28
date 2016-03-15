@@ -11,7 +11,6 @@ using System.Linq;
 using System.Text;
 using WinFormsGame.Classes.EntityClasses;
 using WinFormsGame.Classes;
-using WinFormsGame.Classes.EntityClasses.Enemies;
 using WinFormsGame.Classes.MapClasses;
 
 public class Level
@@ -63,6 +62,24 @@ public class Level
     /// </summary>
     public List<PowerUp> PowerUps { get; }
 
+    public ViewPort ViewPort
+    {
+        get
+        {
+            var location = Player.Location;
+            var cells = Map.GetViewPort(location);
+            var entities =
+                _entities.FindAll(
+                    x =>
+                        location.X - _settings.ViewWidth/2 < x.Location.X 
+                        && x.Location.X < location.X + _settings.ViewWidth/2
+                        && location.Y - _settings.ViewHeight/2 < x.Location.Y
+                        && x.Location.Y < location.Y + _settings.ViewHeight/2);
+
+            return new ViewPort(cells, entities, location);
+        }
+    }
+
     /// <summary>
     /// 
     /// </summary>
@@ -110,7 +127,7 @@ public class Level
                                       (Player.Location.Y - 15 <= enemyLocation.Y && enemyLocation.Y <= Player.Location.Y + 15));
             } while ( isInRangeOfPlayer || _entities.Exists(x => x.Location == enemyLocation));
 
-            _entities.Add(new Melee(enemyLocation));
+            _entities.Add(new Enemy(enemyLocation));
         }
     } 
 }
