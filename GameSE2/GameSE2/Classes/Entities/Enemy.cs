@@ -15,8 +15,10 @@ namespace WinFormsGame.Classes.EntityClasses
 	public class Enemy : Entity
 	{
 		public Enemy(Location loc) : base(loc)
-        {
-        }
+		{
+		    Hitpoints = 20;
+		    Damage = 20;
+		}
 
     }
 }

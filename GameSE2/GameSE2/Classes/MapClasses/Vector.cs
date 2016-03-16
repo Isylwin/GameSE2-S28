@@ -1,19 +1,40 @@
-﻿namespace GameSE2.Classes.MapClasses
+﻿using System;
+
+namespace WinFormsGame.Classes.MapClasses
 {
     public class Vector
     {
-        public int XAxis { get; set; }
+        public int XAxis { get;}
 
-        public int YAxis { get; set; }
+        public int YAxis { get;}
 
-        public override string ToString()
+        public int Speed => Math.Abs(XAxis + YAxis);
+
+        public VectorDirection VectorDirection { get; }
+
+        public Vector(int x, int y)
         {
-            if (XAxis != 0)
-                return XAxis > 0 ? "East" : "West";
-            if (YAxis != 0)
-                return YAxis > 0 ? "South" : "North";
+            XAxis = x;
+            YAxis = y;
 
-            return "No vector";
+            if (XAxis < 0)
+                VectorDirection = VectorDirection.West;
+            else if (XAxis > 0)
+                VectorDirection = VectorDirection.East;
+            else if(YAxis < 0)
+                VectorDirection = VectorDirection.North;
+            else if(YAxis > 0)
+                VectorDirection = VectorDirection.South;
+            else
+                throw new Exception("Incorrect vector.");
         }
+    }
+
+    public enum VectorDirection
+    {
+        West = 0,
+        East = 1,
+        North = 2,
+        South = 3
     }
 }

@@ -11,7 +11,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using WinFormsGame.Classes;
 using WinFormsGame.Classes.EntityClasses;
-using WinFormsGame.Classes.MapClasses;
 
 namespace WinFormsGame
 {
@@ -70,8 +69,10 @@ namespace WinFormsGame
                     image = ilEntities.Images[0];
                 else if (entity is Enemy)
                     image = ilEntities.Images[1];
+                else if (entity is Arrow)
+                    image = ilEntities.Images[2 + (int) (entity as Arrow).Vector.VectorDirection];
                 else
-                    image = null;
+                    image = ilEntities.Images[6]; //Make a no-texture exist texture.
 
                 g.DrawImage(image, (entity.Location.X + xOffset) * CellSize,
                     (entity.Location.Y + yOffset) * CellSize);

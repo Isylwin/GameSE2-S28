@@ -65,6 +65,10 @@
             this.ilEntities.TransparentColor = System.Drawing.Color.Transparent;
             this.ilEntities.Images.SetKeyName(0, "Player_v2.png");
             this.ilEntities.Images.SetKeyName(1, "Skeleton_v1.png");
+            this.ilEntities.Images.SetKeyName(2, "Arrow30x30_vFinalWest.png");
+            this.ilEntities.Images.SetKeyName(3, "Arrow30x30_vFinalEast.png");
+            this.ilEntities.Images.SetKeyName(4, "Arrow30x30_vFinalNorth.png");
+            this.ilEntities.Images.SetKeyName(5, "Arrow30x30_vFinalSouth.png");
             // 
             // MainForm
             // 

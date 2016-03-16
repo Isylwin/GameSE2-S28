@@ -1,5 +1,4 @@
 ﻿using System;
-using GameSE2.Classes.MapClasses;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using WinFormsGame;
 using WinFormsGame.Classes.MapClasses;

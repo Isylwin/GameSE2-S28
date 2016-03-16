@@ -16,6 +16,8 @@ namespace WinFormsGame.Classes.EntityClasses
 	{
         public Player(Location loc) : base(loc)
         {
+            Hitpoints = 100;
+            Damage = 20;
         }
     }
 }

@@ -129,5 +129,35 @@ public class Level
 
             _entities.Add(new Enemy(enemyLocation));
         }
-    } 
+    }
+
+    public void CreateArrow(int xAxis, int yAxis)
+    {
+        Vector vector;
+        Location loc;
+
+        if (xAxis != 0)
+        {
+            loc = new Location(Player.Location.X + xAxis, Player.Location.Y);
+            vector = new Vector(xAxis * 2, 0);
+        }
+        else if (yAxis != 0)
+        {
+            loc = new Location(Player.Location.X, Player.Location.Y + yAxis);
+            vector = new Vector(yAxis * 2, 0);
+        }
+        else
+        {
+            loc = new Location(Player.Location.X + 1, Player.Location.Y);
+            vector = new Vector(2, 0);
+        }
+
+        if (Map.IsLocationEmpty(loc))
+            _entities.Add(new Arrow(loc, vector));
+    }
+
+    public void RemoveDeadEntities()
+    {
+        _entities.RemoveAll(x => x.Hitpoints <= 0);
+    }
 }

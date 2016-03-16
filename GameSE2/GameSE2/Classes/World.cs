@@ -31,10 +31,36 @@ namespace WinFormsGame.Classes
         /// </summary>
         public void Update(List<Keys> keys)
         {
-            MovePlayer(keys);
+            MoveArrows();
+            HandleKeyInput(keys);
+            Level.RemoveDeadEntities();
         }
 
-        private void MovePlayer(List<Keys> keys)
+        private void MoveArrows()
+        {
+            var arrowsToDestroy = new List<Arrow>();
+
+            foreach (var arrow in Level.Arrows)
+            {
+                Location newloc;
+
+                for (var i = 0; i < arrow.Vector.Speed; i++)
+                {
+                    newloc = new Location(arrow.Location.X + arrow.Vector.XAxis / arrow.Vector.Speed, arrow.Location.Y + arrow.Vector.YAxis / arrow.Vector.Speed);
+
+                    if (Level.Map.IsLocationEmpty(newloc))
+                        arrow.Move(newloc);
+                    else
+                    {
+                        Level.Enemies.Find(x => x.Location == arrow.Location)?.TakeDamage(arrow.Damage);
+                        arrow.TakeDamage(1);
+                        break;
+                    }
+                }
+            }
+        }
+
+        private void HandleKeyInput(List<Keys> keys)
         {
             var xAxis = 0;
             var yAxis = 0;
@@ -59,6 +85,11 @@ namespace WinFormsGame.Classes
 
             if(Level.Map.IsLocationEmpty(newLoc))
                 Level.Player.Move(newLoc);
+
+            if (keys.Exists(x => x == Keys.Space))
+            {
+                Level.CreateArrow(xAxis,yAxis);
+            }
         }
 
         public ViewPort GetViewToDraw()
