@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
 using System.Drawing.Text;
 using System.Linq;
@@ -18,23 +19,34 @@ namespace WinFormsGame
     {
         //Constraints of the levelsize: needs to be atleast 17 big and an uneven number of cells.
 
-        private const int HorizontalCells = 99;
-        private const int VerticalCells = 99;
+        private const int HorizontalCells = 199;
+        private const int VerticalCells = 199;
         private const int CellSize = 30;
 
         private readonly World _world;
 
-        private readonly List<Keys> _keys; 
+        private readonly List<Keys> _keys;
+
+        private readonly List<Bitmap> _mapSprites;
+        private readonly List<Bitmap> _entitySprites; 
 
         public MainForm()
         {
             InitializeComponent();
             SetFullScreen();
 
+            pbGame.Width = Bounds.Width;
+            pbGame.Height = Bounds.Height;
+            pbGame.Location = new Point(0,0);
+
             _world = new World(new Settings(VerticalCells, HorizontalCells, pbGame.Height, pbGame.Width, CellSize));
             _keys = new List<Keys>();
+            _mapSprites = new List<Bitmap>();
+            _entitySprites = new List<Bitmap>();
 
             GameTimer.Enabled = true;
+
+            Load_Content();
         }
 
         private void SetFullScreen()
@@ -44,9 +56,32 @@ namespace WinFormsGame
             Bounds = Screen.PrimaryScreen.Bounds;
         }
 
+        private void Load_Content()
+        {
+            _mapSprites.Add(Properties.Resources.Floor30x30_v2);
+            _mapSprites.Add(Properties.Resources.Wall30x30_v3);
+
+            _entitySprites.Add(Properties.Resources.Player_v2);
+            _entitySprites.Add(Properties.Resources.Skeleton_v1);
+            _entitySprites.Add(Properties.Resources.Arrow30x30_vFinalWest);
+            _entitySprites.Add(Properties.Resources.Arrow30x30_vFinalEast);
+            _entitySprites.Add(Properties.Resources.Arrow30x30_vFinalNorth);
+            _entitySprites.Add(Properties.Resources.Arrow30x30_vFinalSouth);
+
+            _entitySprites.ForEach(bitmap => bitmap.MakeTransparent(Color.White));
+        }
+
         private void pbGame_Paint(object sender, PaintEventArgs e)
         {
-            DrawWorld(e.Graphics,_world.GetViewToDraw());
+            var g = e.Graphics;
+
+            g.SmoothingMode = SmoothingMode.HighSpeed;
+            g.InterpolationMode = InterpolationMode.HighQualityBilinear;
+            g.CompositingQuality = CompositingQuality.HighSpeed;
+            g.CompositingMode = CompositingMode.SourceOver;
+            g.PixelOffsetMode = PixelOffsetMode.HighSpeed;
+            
+            DrawWorld(g,_world.GetViewToDraw());
         }
 
         private void DrawWorld(Graphics g, ViewPort toDraw)
@@ -56,7 +91,7 @@ namespace WinFormsGame
 
             foreach(var cell in toDraw.Cells)
             {
-                var image = cell.IsWall ? ilMapItems.Images[1] : ilMapItems.Images[0];
+                var image = cell.IsWall ? _mapSprites[1] : _mapSprites[0];
                 g.DrawImage(image, (cell.Location.X + xOffset) * CellSize, 
                     (cell.Location.Y + yOffset) * CellSize);
             }

@@ -144,7 +144,7 @@ public class Level
         else if (yAxis != 0)
         {
             loc = new Location(Player.Location.X, Player.Location.Y + yAxis);
-            vector = new Vector(yAxis * 2, 0);
+            vector = new Vector(0, yAxis*2);
         }
         else
         {
@@ -152,8 +152,29 @@ public class Level
             vector = new Vector(2, 0);
         }
 
-        if (Map.IsLocationEmpty(loc))
-            _entities.Add(new Arrow(loc, vector));
+        var newArrow = new Arrow(loc,vector);
+
+        if (CheckArrowHit(newArrow))
+            _entities.Add(newArrow);
+    }
+
+    public bool CheckArrowHit(Arrow arrow)
+    {
+        var enemy = Enemies.Find(x => x.Location == arrow.Location);
+
+        if (Map.IsLocationEmpty(arrow.Location) && enemy == null)
+        {
+            return true;
+        }
+        else
+        {
+            if(enemy != null)
+                enemy.TakeDamage(arrow.Damage);
+
+            arrow.TakeDamage(1);
+
+            return false;
+        }
     }
 
     public void RemoveDeadEntities()

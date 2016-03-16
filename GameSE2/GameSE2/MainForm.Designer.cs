@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.pbGame = new System.Windows.Forms.PictureBox();
-            this.ilMapItems = new System.Windows.Forms.ImageList(this.components);
             this.GameTimer = new System.Windows.Forms.Timer(this.components);
             this.ilEntities = new System.Windows.Forms.ImageList(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pbGame)).BeginInit();
@@ -47,16 +46,9 @@
             this.pbGame.TabStop = false;
             this.pbGame.Paint += new System.Windows.Forms.PaintEventHandler(this.pbGame_Paint);
             // 
-            // ilMapItems
-            // 
-            this.ilMapItems.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("ilMapItems.ImageStream")));
-            this.ilMapItems.TransparentColor = System.Drawing.Color.Transparent;
-            this.ilMapItems.Images.SetKeyName(0, "Floor30x30_v2.png");
-            this.ilMapItems.Images.SetKeyName(1, "Wall30x30_v3.png");
-            // 
             // GameTimer
             // 
-            this.GameTimer.Interval = 50;
+            this.GameTimer.Interval = 16;
             this.GameTimer.Tick += new System.EventHandler(this.Update);
             // 
             // ilEntities
@@ -88,7 +80,6 @@
         #endregion
 
         private System.Windows.Forms.PictureBox pbGame;
-        private System.Windows.Forms.ImageList ilMapItems;
         private System.Windows.Forms.Timer GameTimer;
         private System.Windows.Forms.ImageList ilEntities;
     }

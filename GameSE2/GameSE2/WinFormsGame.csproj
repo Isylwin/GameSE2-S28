@@ -103,6 +103,14 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="docs\MuSCoW.txt" />
+    <None Include="Resources\Arrow30x30_vFinalWest.bmp" />
+    <None Include="Resources\Arrow30x30_vFinalSouth.bmp" />
+    <None Include="Resources\Arrow30x30_vFinalNorth.bmp" />
+    <None Include="Resources\Arrow30x30_vFinalEast.bmp" />
+    <None Include="Resources\Skeleton_v1.bmp" />
+    <None Include="Resources\Player_v2.bmp" />
+    <None Include="Resources\Wall30x30_v3.bmp" />
+    <None Include="Resources\Floor30x30_v2.bmp" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -37,9 +37,7 @@ namespace WinFormsGame.Classes
         }
 
         private void MoveArrows()
-        {
-            var arrowsToDestroy = new List<Arrow>();
-
+        { 
             foreach (var arrow in Level.Arrows)
             {
                 Location newloc;
@@ -48,14 +46,10 @@ namespace WinFormsGame.Classes
                 {
                     newloc = new Location(arrow.Location.X + arrow.Vector.XAxis / arrow.Vector.Speed, arrow.Location.Y + arrow.Vector.YAxis / arrow.Vector.Speed);
 
-                    if (Level.Map.IsLocationEmpty(newloc))
+                    if (Level.CheckArrowHit(arrow))
                         arrow.Move(newloc);
                     else
-                    {
-                        Level.Enemies.Find(x => x.Location == arrow.Location)?.TakeDamage(arrow.Damage);
-                        arrow.TakeDamage(1);
                         break;
-                    }
                 }
             }
         }
