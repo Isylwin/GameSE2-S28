@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\Entities\Goal.cs" />
     <Compile Include="Classes\ViewPort.cs" />
     <Compile Include="Classes\Entities\Arrow.cs" />
     <Compile Include="Classes\Entities\Enemy.cs" />

@@ -52,6 +52,14 @@ public class Level
         }
     }
 
+    public Goal Goal
+    {
+        get
+        {
+            return _entities.Find(x => x is Goal) as Goal;
+        }
+    }
+
     /// <summary>
     /// Retries the current map that is used.
     /// </summary>
@@ -96,6 +104,7 @@ public class Level
 
         CreatePlayer();
         CreateEnemies();
+        _entities.Add(new Goal(Map.GetEmptyLocation(_settings.MapRandom)));
     }
 
     /// <summary>
@@ -103,7 +112,7 @@ public class Level
     /// </summary>
     private void CreatePlayer()
     {
-        var playerLoc = Map.GetEmptyLocation();
+        var playerLoc = Map.GetEmptyLocation(_settings.MapRandom);
 
         _entities.Add(new Player(playerLoc));
     }
@@ -121,7 +130,7 @@ public class Level
             //Keep getting a location until you've found a spot thats not too close to the player and unoccupied
             do
             {
-                enemyLocation = Map.GetEmptyLocation();
+                enemyLocation = Map.GetEmptyLocation(null);
                 isInRangeOfPlayer = ((Player.Location.X - 15 <= enemyLocation.X && enemyLocation.X <= Player.Location.X + 15)
                                       ||
                                       (Player.Location.Y - 15 <= enemyLocation.Y && enemyLocation.Y <= Player.Location.Y + 15));
@@ -132,7 +141,7 @@ public class Level
     }
 
     /// <summary>
-    /// Creates a new arrow with a 
+    /// Creates a new arrow.
     /// </summary>
     public void CreateArrow()
     {

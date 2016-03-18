@@ -14,7 +14,7 @@ namespace WinFormsGame.Classes.MapClasses
 	public class Location
 	{
         //Default random constructor gets its from current time. Provides problems at runtime thus location needs a static random.
-	    private static Random rnd = new Random();
+	    private static Random _rnd = new Random();
 
 		public int X { get; set; }
 		public int Y { get; set; }
@@ -32,10 +32,11 @@ namespace WinFormsGame.Classes.MapClasses
         /// <param name="xMax">Maximum x-coordinate</param>
         /// <param name="yMin">Minimum y-coordinate</param>
         /// <param name="yMax">Maximum y-coordinate</param>
-	    public Location(int xMin, int xMax, int yMin, int yMax)
+        /// <param name="rnd">Random</param>
+	    public Location(int xMin, int xMax, int yMin, int yMax, Random rnd)
 	    {          
-	        X = rnd.Next(xMin, xMax);
-	        Y = rnd.Next(yMin, yMax);
+	        X = rnd != null ? rnd.Next(xMin, xMax) : _rnd.Next(xMin,xMax);
+            Y = rnd != null ? rnd.Next(yMin, yMax) : _rnd.Next(yMin, yMax);
 	    }
 
         public override string ToString()

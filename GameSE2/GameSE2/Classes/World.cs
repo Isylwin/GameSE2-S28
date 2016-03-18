@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.InteropServices;
-using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Windows.Forms;
 using WinFormsGame.Classes.MapClasses;
@@ -13,6 +11,8 @@ namespace WinFormsGame.Classes
     public class World
     {
         private readonly Settings _settings;
+
+        public event EventHandler GameOver;
         
         public int LevelNumber { get; }     
 
@@ -33,6 +33,7 @@ namespace WinFormsGame.Classes
         {
             MoveArrows();
             HandleKeyInput(keys);
+            CheckForGameEnd();
             Level.RemoveDeadEntities();
         }
 
@@ -79,6 +80,14 @@ namespace WinFormsGame.Classes
             if (keys.Exists(x => x == Keys.Space))
             {
                 Level.CreateArrow();
+            }
+        }
+
+        private void CheckForGameEnd()
+        {
+            if (Level.Player.Location == Level.Goal.Location && GameOver != null)
+            {
+                GameOver(new object(), new EventArgs());
             }
         }
 

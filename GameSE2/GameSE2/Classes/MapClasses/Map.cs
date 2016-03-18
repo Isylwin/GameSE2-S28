@@ -65,7 +65,7 @@ namespace WinFormsGame.Classes
         /// Gets a random location from the map that is empty.
         /// </summary>
         /// <returns>The empty location.</returns>
-        public Location GetEmptyLocation()
+        public Location GetEmptyLocation(Random rnd)
         {
             Location returnLocation;
             int tries = 0;           
@@ -73,7 +73,7 @@ namespace WinFormsGame.Classes
             //Keep trying to find an empty location through luck, performance worsens when empty spaces are few.
             do
             {
-                returnLocation = new Location(1, _settings.HorizontalCells, 1, _settings.VerticalCells);
+                returnLocation = new Location(1, _settings.HorizontalCells, 1, _settings.VerticalCells, rnd);
 
                 //Throw an exception when an empty location cannot be found.
                 tries++;

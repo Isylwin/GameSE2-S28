@@ -46,7 +46,14 @@ namespace WinFormsGame
 
             GameTimer.Enabled = true;
 
+            _world.GameOver += _world_GameOver;
+
             Load_Content();
+        }
+
+        private void _world_GameOver(object sender, EventArgs e)
+        {
+            MessageBox.Show("SUPER AWESOME! DAT BEN JIJJJJJ");
         }
 
         private void SetFullScreen()
