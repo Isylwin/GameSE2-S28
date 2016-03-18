@@ -19,6 +19,11 @@ namespace WinFormsGame.Classes.EntityClasses
             Hitpoints = 100;
             Damage = 20;
         }
-    }
+
+	    public void Move()
+	    {
+	        Location = new Location(Location.X + Vector.XAxis, Location.Y + Vector.YAxis);
+	    }
+	}
 }
 

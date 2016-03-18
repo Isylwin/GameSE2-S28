@@ -46,7 +46,7 @@ namespace WinFormsGame.Classes
                 {
                     newloc = new Location(arrow.Location.X + arrow.Vector.XAxis / arrow.Vector.Speed, arrow.Location.Y + arrow.Vector.YAxis / arrow.Vector.Speed);
 
-                    if (Level.CheckArrowHit(arrow))
+                    if (Level.CheckArrowHit(arrow, newloc))
                         arrow.Move(newloc);
                     else
                         break;
@@ -56,33 +56,29 @@ namespace WinFormsGame.Classes
 
         private void HandleKeyInput(List<Keys> keys)
         {
-            var xAxis = 0;
-            var yAxis = 0;
-            Location newLoc;
+            if (keys.Exists(x => x == Keys.D) && Level.Player.Vector.VectorDirection == VectorDirection.East)
+                Level.MovePlayer();
+            else if (keys.Exists(x => x == Keys.D))
+                Level.Player.Vector.VectorDirection = VectorDirection.East;
 
-            if (keys.Exists(x => x == Keys.D))
-                xAxis++;
-            if (keys.Exists(x => x == Keys.A))
-                xAxis--;
+            if (keys.Exists(x => x == Keys.A) && Level.Player.Vector.VectorDirection == VectorDirection.West)
+                Level.MovePlayer();
+            else if (keys.Exists(x => x == Keys.A))
+                Level.Player.Vector.VectorDirection = VectorDirection.West;
 
-            newLoc = new Location(Level.Player.Location.X + xAxis, Level.Player.Location.Y);
+            if (keys.Exists(x => x == Keys.S) && Level.Player.Vector.VectorDirection == VectorDirection.South)
+                Level.MovePlayer();
+            else if (keys.Exists(x => x == Keys.S))
+                Level.Player.Vector.VectorDirection = VectorDirection.South;
 
-            if(Level.Map.IsLocationEmpty(newLoc))
-                Level.Player.Move(newLoc);
-
-            if (keys.Exists(x => x == Keys.S))
-                yAxis++;
-            if (keys.Exists(x => x == Keys.W))
-                yAxis--;
-
-            newLoc = new Location(Level.Player.Location.X, Level.Player.Location.Y + yAxis);
-
-            if(Level.Map.IsLocationEmpty(newLoc))
-                Level.Player.Move(newLoc);
+            if (keys.Exists(x => x == Keys.W) && Level.Player.Vector.VectorDirection == VectorDirection.North)
+                Level.MovePlayer();
+            else if (keys.Exists(x => x == Keys.W))
+                Level.Player.Vector.VectorDirection = VectorDirection.North;
 
             if (keys.Exists(x => x == Keys.Space))
             {
-                Level.CreateArrow(xAxis,yAxis);
+                Level.CreateArrow();
             }
         }
 

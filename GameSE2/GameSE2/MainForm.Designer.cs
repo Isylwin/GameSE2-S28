@@ -48,7 +48,7 @@
             // 
             // GameTimer
             // 
-            this.GameTimer.Interval = 16;
+            this.GameTimer.Interval = 33;
             this.GameTimer.Tick += new System.EventHandler(this.Update);
             // 
             // ilEntities

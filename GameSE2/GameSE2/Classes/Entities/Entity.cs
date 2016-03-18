@@ -13,15 +13,18 @@ public abstract class Entity
 	/// <summary>
 	/// Amount of hitpoints
 	/// </summary>
-	public virtual int Hitpoints { get; protected set; }
+	public int Hitpoints { get; protected set; }
 
-	public virtual int Damage { get; protected set; }
+	public int Damage { get; protected set; }
 
-	public virtual Location Location { get; private set; }
+	public Location Location { get; protected set; }
+
+    public Vector Vector { get; protected set; }
 
     public Entity(Location loc)
     {
         Location = loc;
+        Vector = new Vector(1,0);
     }
 
     public void TakeDamage(int Damage)
@@ -29,7 +32,7 @@ public abstract class Entity
         Hitpoints -= Damage;
     }
 
-    public void Move(Location loc)
+    public virtual void Move(Location loc)
     {
         Location = loc;
     }

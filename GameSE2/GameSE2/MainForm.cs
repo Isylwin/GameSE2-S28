@@ -19,8 +19,8 @@ namespace WinFormsGame
     {
         //Constraints of the levelsize: needs to be atleast 17 big and an uneven number of cells.
 
-        private const int HorizontalCells = 199;
-        private const int VerticalCells = 199;
+        private const int HorizontalCells = 99;
+        private const int VerticalCells = 99;
         private const int CellSize = 30;
 
         private readonly World _world;

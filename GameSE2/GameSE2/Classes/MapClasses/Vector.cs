@@ -4,29 +4,58 @@ namespace WinFormsGame.Classes.MapClasses
 {
     public class Vector
     {
-        public int XAxis { get;}
+        public int XAxis { get; private set; }
 
-        public int YAxis { get;}
+        public int YAxis { get; private set; }
 
         public int Speed => Math.Abs(XAxis + YAxis);
 
-        public VectorDirection VectorDirection { get; }
+        public VectorDirection VectorDirection
+        {
+            get
+            {
+                if (XAxis < 0)
+                    return VectorDirection.West;
+                if (XAxis > 0)
+                    return VectorDirection.East;
+                if (YAxis < 0)
+                    return VectorDirection.North;
+                if (YAxis > 0)
+                    return VectorDirection.South;
+               
+                    throw new Exception("Incorrect vector.");
+            }
+
+            set
+            {
+                switch (value)
+                {
+                    case VectorDirection.East:
+                        XAxis = 1;
+                        YAxis = 0;
+                        break;
+                    case VectorDirection.West:
+                        XAxis = -1;
+                        YAxis = 0;
+                        break;
+                    case VectorDirection.South:
+                        XAxis = 0;
+                        YAxis = 1;
+                        break;
+                    case VectorDirection.North:
+                        XAxis = 0;
+                        YAxis = -1;
+                        break;
+                }
+            }
+        }
 
         public Vector(int x, int y)
         {
             XAxis = x;
             YAxis = y;
 
-            if (XAxis < 0)
-                VectorDirection = VectorDirection.West;
-            else if (XAxis > 0)
-                VectorDirection = VectorDirection.East;
-            else if(YAxis < 0)
-                VectorDirection = VectorDirection.North;
-            else if(YAxis > 0)
-                VectorDirection = VectorDirection.South;
-            else
-                throw new Exception("Incorrect vector.");
+            
         }
     }
 

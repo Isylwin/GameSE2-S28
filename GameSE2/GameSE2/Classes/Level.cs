@@ -131,38 +131,31 @@ public class Level
         }
     }
 
-    public void CreateArrow(int xAxis, int yAxis)
+    /// <summary>
+    /// Creates a new arrow with a 
+    /// </summary>
+    public void CreateArrow()
     {
-        Vector vector;
-        Location loc;
-
-        if (xAxis != 0)
-        {
-            loc = new Location(Player.Location.X + xAxis, Player.Location.Y);
-            vector = new Vector(xAxis * 2, 0);
-        }
-        else if (yAxis != 0)
-        {
-            loc = new Location(Player.Location.X, Player.Location.Y + yAxis);
-            vector = new Vector(0, yAxis*2);
-        }
-        else
-        {
-            loc = new Location(Player.Location.X + 1, Player.Location.Y);
-            vector = new Vector(2, 0);
-        }
+        Vector vector = new Vector(Player.Vector.XAxis*2, Player.Vector.YAxis*2);
+        Location loc = new Location(Player.Location.X + vector.XAxis/vector.Speed, Player.Location.Y + vector.YAxis/vector.Speed);
 
         var newArrow = new Arrow(loc,vector);
 
-        if (CheckArrowHit(newArrow))
+        if (CheckArrowHit(newArrow, loc))
             _entities.Add(newArrow);
     }
 
-    public bool CheckArrowHit(Arrow arrow)
+    /// <summary>
+    /// Checks wheter the arrow will hit an enemy or a wall and handles the hit.
+    /// </summary>
+    /// <param name="arrow">The arrow</param>
+    /// <param name="newloc">The new location of the arrow</param>
+    /// <returns></returns>
+    public bool CheckArrowHit(Arrow arrow, Location newloc)
     {
-        var enemy = Enemies.Find(x => x.Location == arrow.Location);
+        var enemy = Enemies.Find(x => x.Location == newloc);
 
-        if (Map.IsLocationEmpty(arrow.Location) && enemy == null)
+        if (Map.IsLocationEmpty(newloc) && enemy == null)
         {
             return true;
         }
@@ -175,6 +168,14 @@ public class Level
 
             return false;
         }
+    }
+
+    public void MovePlayer()
+    {
+        var newLoc = new Location(Player.Location.X + Player.Vector.XAxis, Player.Location.Y + Player.Vector.YAxis);
+
+        if (Map.IsLocationEmpty(newLoc) && !Enemies.Exists(x => x.Location == newLoc))
+            Player.Move();      
     }
 
     public void RemoveDeadEntities()

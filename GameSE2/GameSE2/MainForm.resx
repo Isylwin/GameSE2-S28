@@ -118,17 +118,17 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <metadata name="GameTimer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>129, 17</value>
+    <value>13, 10</value>
   </metadata>
   <metadata name="ilEntities.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>243, 17</value>
+    <value>119, 12</value>
   </metadata>
   <data name="ilEntities.ImageStream" mimetype="application/x-microsoft.net.object.binary.base64">
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAADO
-        FQAAAk1TRnQBSQFMAgEBBgEAAQgBAAEIAQABHgEAAR4BAAT/AREBAAj/AUIBTQE2BwABNgMAASgDAAF4
+        FQAAAk1TRnQBSQFMAgEBBgEAARABAAEQAQABHgEAAR4BAAT/AREBAAj/AUIBTQE2BwABNgMAASgDAAF4
         AwABPAMAAQEBAAEQBQABQAE4/wD/APoAAd0BfwHdAX8CAAGHAUUBhwFFAgAB3QF/Ad0BfzIAATABRgEw
         AUaqAAHdAX8B3QF/Ad0BfwGHAUUBhwFFAd0BfwHdAX8B3QF/MAABMAFGATABRgEwAUYBMAFGqAAB3QF/
         Ad0BfwHdAX8BhwFFAYcBRQHdAX8B3QF/Ad0Bfy4AATABRgEwAUYBMAFGATABRgEwAUYBMAFGpgAB3QF/

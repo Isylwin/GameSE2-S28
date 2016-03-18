@@ -8,8 +8,6 @@ namespace WinFormsGame.Classes.EntityClasses
 {
     public class Arrow : Entity
     {
-        public Vector Vector { get; }
-
         public Arrow(Location loc, Vector vector) : base(loc)
         {
             Vector = vector;
