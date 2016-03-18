@@ -58,22 +58,22 @@ namespace WinFormsGame.Classes
         {
             if (keys.Exists(x => x == Keys.D) && Level.Player.Vector.VectorDirection == VectorDirection.East)
                 Level.MovePlayer();
-            else if (keys.Exists(x => x == Keys.D))
+            else if (keys.Exists(x => x == Keys.D) && Level.Map.IsLocationEmpty(new Location(Level.Player.Location.X + 1, Level.Player.Location.Y)))
                 Level.Player.Vector.VectorDirection = VectorDirection.East;
 
             if (keys.Exists(x => x == Keys.A) && Level.Player.Vector.VectorDirection == VectorDirection.West)
                 Level.MovePlayer();
-            else if (keys.Exists(x => x == Keys.A))
+            else if (keys.Exists(x => x == Keys.A) && Level.Map.IsLocationEmpty(new Location(Level.Player.Location.X - 1, Level.Player.Location.Y)))
                 Level.Player.Vector.VectorDirection = VectorDirection.West;
 
             if (keys.Exists(x => x == Keys.S) && Level.Player.Vector.VectorDirection == VectorDirection.South)
                 Level.MovePlayer();
-            else if (keys.Exists(x => x == Keys.S))
+            else if (keys.Exists(x => x == Keys.S) && Level.Map.IsLocationEmpty(new Location(Level.Player.Location.X, Level.Player.Location.Y + 1)))
                 Level.Player.Vector.VectorDirection = VectorDirection.South;
 
             if (keys.Exists(x => x == Keys.W) && Level.Player.Vector.VectorDirection == VectorDirection.North)
                 Level.MovePlayer();
-            else if (keys.Exists(x => x == Keys.W))
+            else if (keys.Exists(x => x == Keys.W) && Level.Map.IsLocationEmpty(new Location(Level.Player.Location.X, Level.Player.Location.Y - 1)))
                 Level.Player.Vector.VectorDirection = VectorDirection.North;
 
             if (keys.Exists(x => x == Keys.Space))
