@@ -81,38 +81,38 @@ namespace WinFormsGame
             g.CompositingMode = CompositingMode.SourceOver;
             g.PixelOffsetMode = PixelOffsetMode.HighSpeed;
             
-            DrawWorld(g,_world.GetViewToDraw());
+            _world.GetViewToDraw().Draw(g, CellSize, _mapSprites, ilEntities.Images);
         }
 
-        private void DrawWorld(Graphics g, ViewPort toDraw)
-        {
-            var xOffset = pbGame.Width / CellSize / 2 - toDraw.CenterLocation.X; //in cells
-            var yOffset = pbGame.Height / CellSize / 2 - toDraw.CenterLocation.Y; //in cells
+        //private void DrawWorld(Graphics g, ViewPort toDraw)
+        //{
+        //    var xOffset = pbGame.Width / CellSize / 2 - toDraw.CenterLocation.X; //in cells
+        //    var yOffset = pbGame.Height / CellSize / 2 - toDraw.CenterLocation.Y; //in cells
 
-            foreach(var cell in toDraw.Cells)
-            {
-                var image = cell.IsWall ? _mapSprites[1] : _mapSprites[0];
-                g.DrawImage(image, (cell.Location.X + xOffset) * CellSize, 
-                    (cell.Location.Y + yOffset) * CellSize);
-            }
+        //    foreach(var cell in toDraw.Cells)
+        //    {
+        //        var image = cell.IsWall ? _mapSprites[1] : _mapSprites[0];
+        //        g.DrawImage(image, (cell.Location.X + xOffset) * CellSize, 
+        //            (cell.Location.Y + yOffset) * CellSize);
+        //    }
 
-            foreach (var entity in toDraw.Entities)
-            {
-                Image image;
+        //    foreach (var entity in toDraw.Entities)
+        //    {
+        //        Image image;
 
-                if (entity is Player)
-                    image = ilEntities.Images[0];
-                else if (entity is Enemy)
-                    image = ilEntities.Images[1];
-                else if (entity is Arrow)
-                    image = ilEntities.Images[2 + (int) (entity as Arrow).Vector.VectorDirection];
-                else
-                    image = ilEntities.Images[6]; //Make a no-texture exist texture.
+        //        if (entity is Player)
+        //            image = ilEntities.Images[0];
+        //        else if (entity is Enemy)
+        //            image = ilEntities.Images[1];
+        //        else if (entity is Arrow)
+        //            image = ilEntities.Images[2 + (int) (entity as Arrow).Vector.VectorDirection];
+        //        else
+        //            image = ilEntities.Images[6]; //Make a no-texture exist texture.
 
-                g.DrawImage(image, (entity.Location.X + xOffset) * CellSize,
-                    (entity.Location.Y + yOffset) * CellSize);
-            }
-        }
+        //        g.DrawImage(image, (entity.Location.X + xOffset) * CellSize,
+        //            (entity.Location.Y + yOffset) * CellSize);
+        //    }
+        //}
 
         private void Update(object sender, EventArgs e)
         {
