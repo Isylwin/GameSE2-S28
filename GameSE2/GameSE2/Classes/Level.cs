@@ -105,6 +105,8 @@ public class Level
         CreatePlayer();
         CreateEnemies();
         _entities.Add(new Goal(Map.GetEmptyLocation(_settings.MapRandom)));
+
+        //Map.CalculatePath(Player.Location, Goal.Location);
     }
 
     /// <summary>

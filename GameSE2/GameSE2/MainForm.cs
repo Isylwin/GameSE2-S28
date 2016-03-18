@@ -96,7 +96,7 @@ namespace WinFormsGame
         //    var xOffset = pbGame.Width / CellSize / 2 - toDraw.CenterLocation.X; //in cells
         //    var yOffset = pbGame.Height / CellSize / 2 - toDraw.CenterLocation.Y; //in cells
 
-        //    foreach(var cell in toDraw.Cells)
+        //    foreach(var cell in toDraw.FoundPath)
         //    {
         //        var image = cell.IsWall ? _mapSprites[1] : _mapSprites[0];
         //        g.DrawImage(image, (cell.Location.X + xOffset) * CellSize, 

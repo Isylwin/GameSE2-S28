@@ -4,23 +4,21 @@
 
 	public class Path
 	{
-		public virtual Location StartLocation
-		{
-			get;
-			set;
-		}
+		public Location StartLocation { get; set; }
 
-        public virtual List<Cell> Cells
-        {
-            get;
-            set;
-        }
+        public List<Cell> FoundPath { get; set; }
 
-        public virtual Location EndLocation
-		{
-			get;
-			set;
-		}
+        public List<Cell> VisitedCells { get; set; }
+
+        public Location EndLocation { get; set; }
+
+	    public Path(Location startLoc, Location endLoc)
+	    {
+	        StartLocation = startLoc;
+	        EndLocation = endLoc;
+            FoundPath = new List<Cell>();
+            VisitedCells = new List<Cell>();
+	    }
 
 	}
 }

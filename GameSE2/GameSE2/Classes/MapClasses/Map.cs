@@ -1,20 +1,21 @@
 ﻿using WinFormsGame.Classes.MapClasses;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace WinFormsGame.Classes
 {
     public class Map
-	{
+    {
         private readonly Settings _settings;
 
         /// <summary>
         /// 2D array of cells that represent the map.
         /// </summary>
-		public Cell[,] Cells { get; }
+        public Cell[,] Cells { get; }
 
         public Map(Settings settings)
-		{
+        {
             _settings = settings;
 
             Cells = new Cell[settings.HorizontalCells, settings.VerticalCells];
@@ -23,17 +24,64 @@ namespace WinFormsGame.Classes
             {
                 for (int j = 0; j < settings.VerticalCells; j++)
                 {
-                    Cells[i,j] = new Cell(new Location(i, j), true); //Make a map will all walls.
+                    Cells[i, j] = new Cell(new Location(i, j), true); //Make a map will all walls.
                 }
             }
 
             MapGenerator.MineMazeRecursiveBacktracking(_settings.MapRandom, Cells);
-		}
+        }
 
-		public Path CalculatePath(Location startLoc, Location endLoc)
-		{
-			throw new System.NotImplementedException();
-		}
+        public Path CalculatePath(Location startLoc, Location endLoc)
+        {
+            var path = new Path(startLoc,endLoc);
+
+            FindPath(startLoc, path);
+
+            return path;
+        }
+
+        private bool FindPath(Location loc, Path path)
+        {
+            if (loc == path.EndLocation)
+            {
+                path.VisitedCells.Add(Cells[loc.X, loc.Y]);
+                path.FoundPath.Add(Cells[loc.X, loc.Y]);
+                return true;
+            }
+
+            if (path.VisitedCells.Exists(x => x.Location == loc))
+                return false;
+
+            path.VisitedCells.Add(Cells[loc.X, loc.Y]);
+            var neighbours = GetNeighbours(loc);
+
+            if (neighbours.Any(newLoc => FindPath(newLoc, path)))
+            {
+                path.FoundPath.Add(Cells[loc.X,loc.Y]);
+                return true;
+            }
+
+            return false;
+        }
+
+        private List<Location> GetNeighbours(Location loc)
+        {
+            var returnValue = new List<Location>();
+
+            for (var i = loc.X - 1; i < loc.X + 2; i += 2)
+            {
+                if(!Cells[i,loc.Y].IsWall)
+                    returnValue.Add(Cells[i,loc.Y].Location);
+            }
+
+            for (var i = loc.Y - 1; i < loc.Y + 2; i += 2)
+            {
+                if(!Cells[loc.X,i].IsWall)
+                    returnValue.Add(Cells[loc.X,i].Location);
+            }
+
+            return returnValue;
+        }
 
         /// <summary>
         /// Gets the cells within the view of a certain location.
