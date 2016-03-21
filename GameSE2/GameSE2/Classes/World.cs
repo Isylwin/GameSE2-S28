@@ -14,7 +14,7 @@ namespace WinFormsGame.Classes
 
         public event EventHandler GameOver;
         
-        public int LevelNumber { get; }     
+        public int LevelNumber { get; private set; }     
 
         public Level Level { get; private set; }
 
@@ -22,7 +22,7 @@ namespace WinFormsGame.Classes
         {
             _settings = settings;
 
-            LevelNumber = 1;           
+            LevelNumber = 0;           
             CreateNewLevel();           
         }
         
@@ -77,6 +77,17 @@ namespace WinFormsGame.Classes
             else if (keys.Exists(x => x == Keys.W) && Level.Map.IsLocationEmpty(new Location(Level.Player.Location.X, Level.Player.Location.Y - 1)))
                 Level.Player.Vector.VectorDirection = VectorDirection.North;
 
+            if (keys.Exists(x => x == Keys.T))
+                Level.Player.CheatsyDoodles = Level.Map.CalculatePath(Level.Player.Location, Level.Goal.Location);
+
+            if (keys.Exists(x => x == Keys.J) && Level.Player.CheatsyDoodles != null 
+                && Level.Player.CheatsyDoodles.FoundPath.Last().Location == Level.Player.Location && Level.Player.Location != Level.Player.CheatsyDoodles.EndLocation)
+            {
+                Level.Player.Move(Level.Player.CheatsyDoodles.FoundPath[Level.Player.CheatsyDoodles.FoundPath.Count - 2].Location);
+                Level.Player.CheatsyDoodles.FoundPath.Remove(Level.Player.CheatsyDoodles.FoundPath.Last());
+                
+            }
+
             if (keys.Exists(x => x == Keys.Space))
             {
                 Level.CreateArrow();
@@ -96,8 +107,9 @@ namespace WinFormsGame.Classes
             return Level.ViewPort;
         }
 
-        private void CreateNewLevel()
+        public void CreateNewLevel()
         {
+            LevelNumber++;
             Level = new Level(_settings, LevelNumber);
         }
 

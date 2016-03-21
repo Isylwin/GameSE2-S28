@@ -14,6 +14,8 @@ namespace WinFormsGame.Classes.EntityClasses
 
 	public class Player : Entity
 	{
+        public Path CheatsyDoodles { get; set; }
+
         public Player(Location loc) : base(loc)
         {
             Hitpoints = 100;

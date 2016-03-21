@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using WinFormsGame;
 using WinFormsGame.Classes.MapClasses;
@@ -85,6 +86,16 @@ namespace WinFormsGameTestProject
         public void MapGeneratePerformance()
         {
             MapGenerator.MineMazeRecursiveBacktracking(_settings.MapRandom, testCells);
+        }
+
+        [TestMethod]
+        public void CheckPathFinding()
+        {
+            foreach (var path in from Cell cell in map.Cells where !cell.IsWall && cell.Location != new Location(1,1) select map.CalculatePath(cell.Location, new Location(1, 1)))
+            {
+                Assert.IsTrue(path.FoundPath.Count > 0, "No Path found");
+                Assert.IsFalse(path.FoundPath.Exists(x => x.IsWall), "Path uses invalid cell");
+            }
         }
     }
 }

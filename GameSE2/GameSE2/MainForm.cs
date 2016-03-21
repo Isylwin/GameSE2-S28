@@ -53,7 +53,11 @@ namespace WinFormsGame
 
         private void _world_GameOver(object sender, EventArgs e)
         {
+            GameTimer.Enabled = false;
+            _keys.Clear();
             MessageBox.Show("SUPER AWESOME! DAT BEN JIJJJJJ");
+            _world.CreateNewLevel();
+            GameTimer.Enabled = true;
         }
 
         private void SetFullScreen()

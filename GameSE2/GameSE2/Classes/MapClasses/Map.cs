@@ -35,53 +35,12 @@ namespace WinFormsGame.Classes
         {
             var path = new Path(startLoc,endLoc);
 
-            FindPath(startLoc, path);
+            path.FindPath(startLoc, Cells);
 
             return path;
         }
 
-        private bool FindPath(Location loc, Path path)
-        {
-            if (loc == path.EndLocation)
-            {
-                path.VisitedCells.Add(Cells[loc.X, loc.Y]);
-                path.FoundPath.Add(Cells[loc.X, loc.Y]);
-                return true;
-            }
 
-            if (path.VisitedCells.Exists(x => x.Location == loc))
-                return false;
-
-            path.VisitedCells.Add(Cells[loc.X, loc.Y]);
-            var neighbours = GetNeighbours(loc);
-
-            if (neighbours.Any(newLoc => FindPath(newLoc, path)))
-            {
-                path.FoundPath.Add(Cells[loc.X,loc.Y]);
-                return true;
-            }
-
-            return false;
-        }
-
-        private List<Location> GetNeighbours(Location loc)
-        {
-            var returnValue = new List<Location>();
-
-            for (var i = loc.X - 1; i < loc.X + 2; i += 2)
-            {
-                if(!Cells[i,loc.Y].IsWall)
-                    returnValue.Add(Cells[i,loc.Y].Location);
-            }
-
-            for (var i = loc.Y - 1; i < loc.Y + 2; i += 2)
-            {
-                if(!Cells[loc.X,i].IsWall)
-                    returnValue.Add(Cells[loc.X,i].Location);
-            }
-
-            return returnValue;
-        }
 
         /// <summary>
         /// Gets the cells within the view of a certain location.
